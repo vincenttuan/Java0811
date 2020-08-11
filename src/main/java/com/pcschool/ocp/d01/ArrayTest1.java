@@ -2,7 +2,7 @@ package com.pcschool.ocp.d01;
 
 public class ArrayTest1 {
     public static void main(String[] args) {
-        int[] scores = {100, 90, 80, 70};
+        int[] scores = {100, 90, 83, 70};
         System.out.println(scores[0]);
         System.out.println(scores[1]);
         System.out.println(scores[2]);
@@ -15,8 +15,8 @@ public class ArrayTest1 {
         }
         System.out.printf("總分: %d\n", sum);
         // 求平均 ?
-        int avg = sum / scores.length;
-        System.out.printf("平均: %d\n", avg);
+        double avg = sum / (double)scores.length;
+        System.out.printf("平均: %.1f\n", avg);
         
         
     }
