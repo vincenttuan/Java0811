@@ -34,7 +34,7 @@ public class ATM {
                 System.out.printf("帳戶餘額: %,d\n", balance);
                 break;
             case 9: // 9.離開
-                return;
+                return; // run() 方法結束
         }
         run(account); // 遞迴
     }
