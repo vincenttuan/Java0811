@@ -14,8 +14,21 @@ public class ArrayTest3 {
         avg = sum/h.length;
         System.out.printf("平均: %.2f cm\n", avg);
         // 取最大值?
-        
-        
+        double max = Integer.MIN_VALUE;
+        for(int i=0, len=h.length;i<len;i++) {
+            if(h[i] > max) {
+                max = h[i];
+            }
+        }
+        System.out.printf("最高: %.2f cm\n", max);
+        // 取最小值?
+        double min = Integer.MAX_VALUE;
+        for(int i=0, len=h.length;i<len;i++) {
+            if(h[i] < min) {
+                min = h[i];
+            }
+        }
+        System.out.printf("最小: %.2f cm\n", min);
         // Java 8
         // 列出所有身高
         Arrays.stream(h).forEach(x -> System.out.println(x));
