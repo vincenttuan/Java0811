@@ -8,9 +8,9 @@ public class BMIStore {
         
         BMI b2 = new BMI();
         b2.name="Mary";b2.h=165;b2.w=45;
-        b2.bmi = b2.calcBMI();
+        b2.bmi = -1;
         
-        System.out.printf("%s bmi=%.2f\n", b1.name, b1.bmi);
-        System.out.printf("%s bmi=%.2f\n", b2.name, b2.bmi);
+        System.out.printf("%s (%.1f, %.1f) bmi=%.2f\n", b1.name, b1.h, b1.w, b1.bmi);
+        System.out.printf("%s (%.1f, %.1f) bmi=%.2f\n", b2.name, b2.h, b2.w, b2.bmi);
     }
 }
