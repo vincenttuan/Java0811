@@ -17,7 +17,15 @@ public class ArrayTest1 {
         // 求平均 ?
         double avg = sum / (double)scores.length;
         System.out.printf("平均: %.1f\n", avg);
-        
-        
+        // 標準差
+        double sum2 = 0;
+        for(int i=0;i<scores.length;i++) {
+            sum2 += Math.pow(scores[i] - avg, 2);
+        }
+        double sd = Math.sqrt((1.0/scores.length)*sum2);
+        System.out.printf("標準差: %.2f\n", sd);
+        // 變異係數
+        double cv = sd / avg;
+        System.out.printf("變異係數: %.2f\n", cv);
     }
 }
