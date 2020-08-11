@@ -8,7 +8,7 @@ public class PetStore {
         Dog d2 = new Dog();
         Dog d3 = new Dog();
         // d1, d2, d3 資料設定
-        Dog.type = "拉不拉多";
+        Dog.type = "柴犬";
         d1.age = 5;d1.price = 5000;d1.amount = 30;
         d2.age = 2;d2.price = 3000;d2.amount = 20;
         d3.age = 4;d3.price = 8000;d3.amount = 10;
