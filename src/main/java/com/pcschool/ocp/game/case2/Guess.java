@@ -22,7 +22,6 @@ public class Guess {
             for (int x : user) {
                 System.out.print(x + " ");
             }
-            System.out.println();
             // 幾 A 幾 B ?
             int a = 0;
             int b = 0;
