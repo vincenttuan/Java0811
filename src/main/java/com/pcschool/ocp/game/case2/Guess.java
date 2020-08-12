@@ -16,6 +16,8 @@ public class Guess {
         }
         System.out.println();
         // 幾 A 幾 B ?
+        int a = 0;
+        int b = 0;
         
     }
 }
