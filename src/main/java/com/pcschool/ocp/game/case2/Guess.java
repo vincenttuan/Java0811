@@ -18,6 +18,7 @@ public class Guess {
         // 幾 A 幾 B ?
         int a = 0;
         int b = 0;
+        // 計算 B
         for(int ur : user) {
             for(int as : ans) {
                 if(ur == as) {
@@ -25,11 +26,13 @@ public class Guess {
                 };
             }
         }
+        // 計算 A
         for(int i=0;i<user.length;i++) {
             if(user[i] == ans[i]) {
                 a++;
             }
         }
+        // 減去多算的 B (同位置的)
         b = b - a;
         System.out.printf("%dA%dB\n", a, b);
         
