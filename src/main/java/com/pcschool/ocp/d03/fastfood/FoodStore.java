@@ -10,5 +10,7 @@ public class FoodStore {
         System.out.println(b.getPrice());
         System.out.println(c.getPrice());
         System.out.println(d.getPrice());
+        System.out.printf("庫存: 雞腿: %d, 雞胸: %d 雞翅: %d 可樂: %d\n", 
+                Leg.getAmount(), Breast.getAmount(), Wings.getAmount(), Coca.getAmount());
     }
 }
