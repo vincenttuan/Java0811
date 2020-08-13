@@ -8,7 +8,8 @@ public class School {
             {"jane", "17", "165" , "65"},
             {"mark", "19", "180" , "55"},
         };
-        System.out.println(data[0]);
+        System.out.println(data.length);
+        
         
     }
 }

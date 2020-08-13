@@ -5,10 +5,10 @@ public class BMI {
     private double weight;
     private double bmiValue;
 
-    public BMI(double height, double weight, double bmiValue) {
+    public BMI(double height, double weight) {
         this.height = height;
         this.weight = weight;
-        this.bmiValue = bmiValue;
+        this.bmiValue = weight / Math.pow(height/100, 2);
     }
 
     @Override
