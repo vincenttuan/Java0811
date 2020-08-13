@@ -20,6 +20,11 @@ public class School {
             BMI bmi = new BMI(height, weight);
             // 建立 Student 物件
             Student student = new Student(name, age, bmi);
+            // 置入資料
+            students[i] = student;
+        }
+        // 列印 students
+        for(Student student : students) {
             System.out.println(student);
         }
         
