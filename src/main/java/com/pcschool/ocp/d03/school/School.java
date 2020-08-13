@@ -27,7 +27,15 @@ public class School {
         for(Student student : students) {
             System.out.println(student);
         }
+        System.out.println("--------------------------------------------");
         
-        
+        Student s1 = students[0];
+        Student s2 = students[1];
+        students[0] = s2;
+        students[1] = s1;
+        // 列印 students
+        for(Student student : students) {
+            System.out.println(student);
+        }
     }
 }
