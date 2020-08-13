@@ -2,7 +2,7 @@ package com.pcschool.ocp.d03;
 
 public class ArithmeticMethod3 {
     public static void main(String[] args) {
-        double[][] bmis = {{170.0, 60.0}, {160.0, 60.5}, {185, 65.5}};
+        BMI[] bmis = {new BMI(170.0, 60.0), new BMI(160.0, 60.5), new BMI(185, 65.5)};
         
     }
 }
