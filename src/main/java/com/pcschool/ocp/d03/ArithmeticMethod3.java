@@ -1,9 +1,16 @@
 package com.pcschool.ocp.d03;
 
+import java.util.Arrays;
+
 public class ArithmeticMethod3 {
     public static void main(String[] args) {
-        BMI[] bmis = {new BMI(170.0, 60.0), new BMI(160.0, 60.5), new BMI(185, 65.5)};
-        
+        BMI[] bmis = {
+            new BMI(170.0, 60.0), 
+            new BMI(160.0, 60.5), 
+            new BMI(185.0, 65.5),
+        };
+        // Java 8 資料列表
+        Arrays.stream(bmis).forEach(b -> System.out.println(b));
     }
 }
 
@@ -15,7 +22,6 @@ class BMI {
     public BMI(double h, double w) {
         this.h = h;
         this.w = w;
-        value = w / Math.pow(h/100, 2);
     }
 
     public double getH() {
