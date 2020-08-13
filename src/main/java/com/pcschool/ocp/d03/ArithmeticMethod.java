@@ -19,7 +19,5 @@ public class ArithmeticMethod {
             System.out.print(p + " ");
         }
         System.out.println();
-        
-        
     }
 }
