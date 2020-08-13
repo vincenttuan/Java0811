@@ -3,6 +3,11 @@ package com.pcschool.ocp.d03.fastfood;
 public class Breast {
     private int price = 35;
     private static int amount = 100;
+
+    public Breast() {
+        amount--;
+    }
+    
     public int getPrice() {
         return price;
     }
