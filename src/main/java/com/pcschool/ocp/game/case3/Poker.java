@@ -16,7 +16,7 @@ public class Poker {
 
     @Override
     public String toString() {
-        return color + mark + number;
+        return mark + number;
     }
 
     
