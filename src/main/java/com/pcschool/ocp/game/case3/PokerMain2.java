@@ -12,6 +12,10 @@ public class PokerMain2 {
         // 將檔案內容全部
         String allData = sc.useDelimiter("\\A").next();
         // 列印
-        System.out.println(allData);
+        //System.out.println(allData);
+        // 透過 split() 切分資料
+        String[] rows = allData.split("\n");
+        //  抓第一筆
+        System.out.println(rows[0]);
     }
 }
