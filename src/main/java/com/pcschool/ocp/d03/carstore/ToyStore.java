@@ -11,5 +11,6 @@ public class ToyStore {
         toyCar.engine = engine;
         toyCar.tires = tires;
         toyCar.wheel = wheel;
+        System.out.println(toyCar.getPrice());
     }
 }
