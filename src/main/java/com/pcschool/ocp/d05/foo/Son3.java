@@ -5,6 +5,6 @@ import com.pcschool.ocp.d05.Father;
 public class Son3  {
     public void print() {
         Father father = new Father();
-        System.out.println(father.money);
+        //System.out.println(father.money); // 無法使用
     }
 }
