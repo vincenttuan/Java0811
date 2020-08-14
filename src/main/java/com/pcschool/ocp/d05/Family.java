@@ -6,8 +6,7 @@ import com.pcschool.ocp.d05.foo.Son3;
 public class Family {
     public static void main(String[] args) {
         Son son = new Son();
-        System.out.println(son.money);
-        son.play();
+        son.print();
         
         Son2 son2 = new Son2();
         son2.print();
