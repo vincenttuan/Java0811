@@ -7,6 +7,7 @@ public class Food {
     private int amount = 100;
     private int price;
     
+    // 類別資源共同初始區段
     static {
         int n = new Random().nextInt(10);
         if(n % 2 == 0)
@@ -15,7 +16,7 @@ public class Food {
             name = "糖水";
     }
     
-    // 物件共同初始區段
+    // 物件資源共同初始區段
     {
         int n = new Random().nextInt(10);
         price = n % 2 == 0 ? 100 : 50;
