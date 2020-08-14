@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d05;
+package com.pcschool.ocp.exam;
 
 public class Test {
     int x, y;
