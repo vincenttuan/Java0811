@@ -4,6 +4,7 @@ public class Employee {
     private int salary;
 
     public Employee() {
+        salary = 23800;
     }
     
     public int getSalary() {
