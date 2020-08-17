@@ -46,9 +46,16 @@ public class Company2 {
         Arrays.stream(employees)
                 .forEach(e -> System.out.println(e.getSalary().getMoney()));
         
+        // 總薪資成本 = ?
         sum = Arrays.stream(employees)
                 .mapToInt(e -> e.getSalary().getMoney())
                 .sum();
         System.out.printf("總薪資成本: %,d\n", sum);
+        // Sales總薪資成本 = ? 
+        sum = Arrays.stream(employees)
+                .filter(e -> e instanceof Sales)
+                .mapToInt(e -> e.getSalary().getMoney())
+                .sum(); 
+        System.out.printf("Sales 總薪資成本: %,d\n", sum);
     }
 }
