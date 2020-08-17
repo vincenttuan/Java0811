@@ -1,7 +1,7 @@
 package com.pcschool.ocp.d06.case1;
 
 public class Employee {
-    private static final int BASE_SALARY = 23800; // 基本薪資
+    private static final int BASE_SALARY = 2_3800; // 基本薪資
     private int salary;
 
     public Employee() {
