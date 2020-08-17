@@ -33,6 +33,14 @@ public class Company2 {
             sum += emp.getSalary().getMoney();
         }
         System.out.printf("總薪資成本: %,d\n", sum);
-                
+        // Sales總薪資成本 = ?        
+        sum = 0;
+        for(Employee emp : employees) {
+            if (emp instanceof Sales) {
+                sum += emp.getSalary().getMoney();
+            }
+        }
+        System.out.printf("Sales 總薪資成本: %,d\n", sum);
+        
     }
 }
