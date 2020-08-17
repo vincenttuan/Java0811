@@ -17,6 +17,10 @@ public class Drink {
         return this;
     }
 
+    public ArrayList<Material> getMaterials() {
+        return materials;
+    }
+    
     public int getPrice() {
         return materials.stream().mapToInt(m -> m.getPrice()).sum();
     }
