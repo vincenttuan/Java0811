@@ -12,8 +12,9 @@ public class Drink {
         materials = new ArrayList<>(); // ArrayList 動態陣列實體
     }
     
-    public void addMaterial(Material m) { // 增加原料
+    public Drink addMaterial(Material m) { // 增加原料
         materials.add(m);
+        return this;
     }
 
     public int getPrice() {
