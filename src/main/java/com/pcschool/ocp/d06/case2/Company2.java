@@ -57,5 +57,12 @@ public class Company2 {
                 .mapToInt(e -> e.getSalary().getMoney())
                 .sum(); 
         System.out.printf("Sales 總薪資成本: %,d\n", sum);
+        // Manager總薪資成本 = ? 
+        sum = Arrays.stream(employees)
+                .filter(e -> e instanceof Manager)
+                .filter(e -> !(e instanceof Supervistor))
+                .mapToInt(e -> e.getSalary().getMoney())
+                .sum(); 
+        System.out.printf("Manager 總薪資成本: %,d\n", sum);
     }
 }
