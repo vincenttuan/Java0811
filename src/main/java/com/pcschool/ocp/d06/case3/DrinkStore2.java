@@ -28,8 +28,11 @@ public class DrinkStore2 {
         drinks.add(new PearlTea());
         drinks.add(new PearlTea());
         
-        // 總共買了多少錢 ?
-        int sum = 
+        // 1.總共買了多少錢 ?
+        int sum = drinks.stream().mapToInt(d -> d.getPrice()).sum();
+        System.out.printf("總共買了多少錢: $%,d\n", sum);
+        
+        // 2.成分中有奶製品(Milk)的共有多少錢 ?
         
     }
 }
