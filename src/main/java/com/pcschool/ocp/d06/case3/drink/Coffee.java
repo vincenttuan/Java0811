@@ -10,6 +10,7 @@ public class Coffee extends Drink {
         Bean bean = new Bean();
         Milk milk = new Milk();
         addMaterial(bean).addMaterial(milk);
+        
     }
  
 }
