@@ -11,6 +11,7 @@ public class Pearl extends Material {
     public Pearl(String size) {
         setName("珍珠");
         setSize(size);
+        setPrice();
     }
     
     // 超載方法 Overloading
