@@ -1,10 +1,11 @@
 package com.pcschool.ocp.d06.case1;
 
 public class Employee {
+    private static final int BASE_SALARY = 23800; // 基本薪資
     private int salary;
 
     public Employee() {
-        salary = 23800;
+        setSalary(BASE_SALARY);
     }
     
     public int getSalary() {
@@ -12,7 +13,11 @@ public class Employee {
     }
 
     public void setSalary(int money) {
-        this.salary = money;
+        if(money > BASE_SALARY) {
+            this.salary = money;
+        } else {
+            this.salary = BASE_SALARY;
+        }
     }
     
 }
