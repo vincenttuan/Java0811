@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d06.case2;
+package com.pcschool.ocp.d06.case2.employee;
 
 import com.pcschool.ocp.d06.case2.salary.Salary;
 
