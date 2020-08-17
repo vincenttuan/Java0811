@@ -6,6 +6,7 @@ import com.pcschool.ocp.d06.case2.employee.Manager;
 import com.pcschool.ocp.d06.case2.employee.Operator;
 import com.pcschool.ocp.d06.case2.employee.Sales;
 import com.pcschool.ocp.d06.case2.employee.Supervistor;
+import java.util.Arrays;
 
 public class Company2 {
     public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class Company2 {
             new Operator(),
             new Operator(),
         };
-        // 資料分析
+        // 資料分析 Java 7
         // 總薪資成本 = ?
         int sum = 0;
         for(Employee emp : employees) {
@@ -41,6 +42,13 @@ public class Company2 {
             }
         }
         System.out.printf("Sales 總薪資成本: %,d\n", sum);
+        // 資料分析 Java 8
+        Arrays.stream(employees)
+                .forEach(e -> System.out.println(e.getSalary().getMoney()));
         
+        sum = Arrays.stream(employees)
+                .mapToInt(e -> e.getSalary().getMoney())
+                .sum();
+        System.out.printf("總薪資成本: %,d\n", sum);
     }
 }
