@@ -21,7 +21,13 @@ public class Food {
     }
 
     public Food addMaterial(Material material) {
-        return null;
+        Material[] new_materials = new Material[materials.length + 1];
+        for(int i=0;i<new_materials.length-1;i++) {
+            new_materials[i] = materials[i];
+        }
+        new_materials[new_materials.length-1] = material;
+        setMaterials(new_materials);
+        return this;
     }
 
     public String getName() {
