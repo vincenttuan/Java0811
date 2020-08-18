@@ -2,6 +2,8 @@ package com.pcschool.ocp.d07.case4;
 
 import com.google.gson.Gson;
 import java.io.File;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +17,10 @@ public class Main {
         // 有幾筆資料 ?
         System.out.printf("資料筆數: %d\n", programmers.length);
         // 請問所有 Programmer 總薪資 ? 平均薪資 ? 最高 ? 最低 ?
-        
+        IntSummaryStatistics stat = Arrays.stream(programmers)
+                .mapToInt(p -> p.getSalary())
+                .summaryStatistics();
+        System.out.printf("總薪資: %,d 平均: %,.1f 最高: %,d 最低: %,d\n", 
+                          stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
     }
 }
