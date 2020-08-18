@@ -8,6 +8,8 @@ public class Material {
     }
 
     public Material(String name, int price) {
+        setName(name);
+        setPrice(price);
     }
 
     public String getName() {
