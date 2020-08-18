@@ -20,6 +20,8 @@ public class Breakfirst {
         System.out.println(hamburger.getName()); // 牛肉蛋堡
         System.out.println(hamburger.getPrice()); // 50
         // 列印素材(素材/價格)
+        Arrays.stream(hamburger.getMaterials())
+                .forEach(m -> {System.out.println(m.getName() + "/" + m.getPrice());});
         
     }
 }
