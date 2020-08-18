@@ -1,6 +1,7 @@
 package com.pcschool.ocp.d07.case1.food;
 
 import com.pcschool.ocp.d07.case1.material.Material;
+import java.util.Arrays;
 
 public class Food {
 
@@ -16,7 +17,7 @@ public class Food {
     }
 
     public int getPrice() {
-        return 0;
+        return Arrays.stream(materials).mapToInt(m -> m.getPrice()).sum();
     }
 
     public Food addMaterial(Material material) {
