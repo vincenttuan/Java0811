@@ -12,6 +12,7 @@ public class Food {
     }
 
     public Food(String name) {
+        setName(name);
     }
 
     public int getPrice() {
