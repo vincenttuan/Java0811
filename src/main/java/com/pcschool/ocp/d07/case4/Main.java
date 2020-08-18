@@ -14,5 +14,7 @@ public class Main {
         Programmer[] programmers = new Gson().fromJson(json, Programmer[].class);
         // 有幾筆資料 ?
         System.out.printf("資料筆數: %d\n", programmers.length);
+        // 請問所有 Programmer 總薪資 ? 平均薪資 ? 最高 ? 最低 ?
+        
     }
 }
