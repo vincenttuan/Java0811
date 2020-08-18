@@ -1,0 +1,38 @@
+[
+    {
+        "name": "java",
+        "sex":"m",
+        "age":20,
+        "salary":35000
+    },
+    {
+        "name": "java",
+        "sex":"m",
+        "age":25,
+        "salary":45000
+    },
+    {
+        "name": "java",
+        "sex":"f",
+        "age":23,
+        "salary":42000
+    },
+    {
+        "name": "php",
+        "sex":"m",
+        "age":21,
+        "salary":31000
+    },
+    {
+        "name": "php",
+        "sex":"f",
+        "age":22,
+        "salary":29000
+    },
+    {
+        "name": "php",
+        "sex":"m",
+        "age":24,
+        "salary":36000
+    }
+]
