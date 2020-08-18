@@ -22,5 +22,33 @@ public class Main {
                 .summaryStatistics();
         System.out.printf("總薪資: %,d 平均: %,.1f 最高: %,d 最低: %,d\n", 
                           stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
+        // java 平均薪資
+        double javaAvg = Arrays.stream(programmers)
+                               .filter(p -> p.getName().equals("java"))
+                               .mapToInt(p -> p.getSalary())
+                               .summaryStatistics()
+                               .getAverage();
+        System.out.printf("Java 平均薪資: %,.1f\n", javaAvg);
+        // php 平均薪資
+        double phpAvg = Arrays.stream(programmers)
+                               .filter(p -> p.getName().equals("php"))
+                               .mapToInt(p -> p.getSalary())
+                               .summaryStatistics()
+                               .getAverage();
+        System.out.printf("PHP 平均薪資: %,.1f\n", phpAvg);
+        // m 男性平均薪資
+        double mAvg = Arrays.stream(programmers)
+                               .filter(p -> p.getSex().equals("m"))
+                               .mapToInt(p -> p.getSalary())
+                               .summaryStatistics()
+                               .getAverage();
+        System.out.printf("男性 平均薪資: %,.1f\n", mAvg);
+        // f 女性平均薪資
+        double fAvg = Arrays.stream(programmers)
+                               .filter(p -> p.getSex().equals("f"))
+                               .mapToInt(p -> p.getSalary())
+                               .summaryStatistics()
+                               .getAverage();
+        System.out.printf("女性 平均薪資: %,.1f\n", fAvg);
     }
 }
