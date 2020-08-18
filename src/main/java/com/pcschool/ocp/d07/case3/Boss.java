@@ -5,4 +5,7 @@ public class Boss extends Manager {
     public void printFire() {
         System.out.println("開除員工");
     }
+    public void job() {
+        System.out.println("找Case, 發薪水");
+    }
 }

@@ -5,4 +5,7 @@ public class Employee {
     public void printSalary() {
         System.out.println("支取薪資");
     }
+    public void job() {
+        System.out.println("寫程式");
+    }
 }

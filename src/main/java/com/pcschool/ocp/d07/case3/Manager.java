@@ -5,4 +5,7 @@ public class Manager extends Employee {
     public void printBudget() {
         System.out.println("編列預算");
     }
+    public void job() {
+        System.out.println("管進度");
+    }
 }
