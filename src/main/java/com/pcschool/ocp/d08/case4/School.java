@@ -15,5 +15,6 @@ public class School {
         
         // 請問 學生 平均 BMI ?
         
+        // 將名字中有"2"的人列出
     }
 }
