@@ -7,6 +7,7 @@ public class PetStore {
         Pet[] pets = {new Chihuahua(), new Yorkshire(), new Yorkshire()};
         Arrays.stream(pets)
                 .forEach(p -> p.skill());
-        
+        Arrays.stream(pets)
+                .forEach(p -> System.out.println(Pet.legs));
     }
 }
