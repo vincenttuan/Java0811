@@ -33,8 +33,8 @@ public class School {
                                  .average()
                                  .getAsDouble();
         System.out.printf("Teacher平均薪資: %.2f\n", salaryAvg);        
-                
                               
         // 將名字中有"2"的人列出
+        
     }
 }
