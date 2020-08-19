@@ -6,14 +6,15 @@ public class Teacher extends Person {
     
     public Teacher(String name, int age, double bmi, int money) {
         super(name, age, bmi);
+        this.salary = new Salary(money);
     }
     
     public Salary getSalary() {
-        return null;
+        return salary;
     }
     
     public String toString() {
-        return null;
+        return String.format("老師: %s 年齡: %d bmi:%.1f 薪資: %d\n", getName(), getAge(), getBmi(), salary.getMoney());
     }
     
 }
