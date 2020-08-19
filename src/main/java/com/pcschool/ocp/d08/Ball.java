@@ -1,5 +1,7 @@
 package com.pcschool.ocp.d08;
 
+import java.util.Objects;
+
 public class Ball {
     private String color;
     private int price;
@@ -10,19 +12,34 @@ public class Ball {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.color);
+        hash = 97 * hash + this.price;
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object obj) {
-        if(this == obj) {
+        if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Ball)) {
+        if (obj == null) {
             return false;
         }
-        Ball ball = (Ball)obj;
-        if(price == ball.price && color.equals(ball.color)) {
-            return true;
+        if (getClass() != obj.getClass()) {
+            return false;
         }
-        return false;
+        final Ball other = (Ball) obj;
+        if (this.price != other.price) {
+            return false;
+        }
+        if (!Objects.equals(this.color, other.color)) {
+            return false;
+        }
+        return true;
     }
+    
     
     
 
