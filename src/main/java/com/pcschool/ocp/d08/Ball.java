@@ -11,7 +11,17 @@ public class Ball {
 
     @Override
     public boolean equals(Object obj) {
-        return true;
+        if(this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Ball)) {
+            return false;
+        }
+        Ball ball = (Ball)obj;
+        if(price == ball.price && color.equals(ball.color)) {
+            return true;
+        }
+        return false;
     }
     
     
