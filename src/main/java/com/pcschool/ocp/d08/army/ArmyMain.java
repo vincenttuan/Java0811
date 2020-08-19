@@ -15,5 +15,10 @@ public class ArmyMain {
         for(Weapon w : weapons) {
             w.shoot();
         }
+        
+        // cars 要統一發射武器 (java 8)
+        
+        // weapons 要統一發射武器 (java 8)
+        
     }
 }
