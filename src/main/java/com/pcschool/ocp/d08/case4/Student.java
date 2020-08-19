@@ -7,7 +7,7 @@ public class Student extends Person {
     }
     
     public String toString() {
-        return String.format("學生: %s 年齡: %d bmi:%.1f\n", getName(), getAge(), getBmi());
+        return String.format("學生: %s 年齡: %d bmi:%.1f", getName(), getAge(), getBmi());
     }
     
 }

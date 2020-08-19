@@ -14,7 +14,7 @@ public class Teacher extends Person {
     }
     
     public String toString() {
-        return String.format("老師: %s 年齡: %d bmi:%.1f 薪資: %d\n", getName(), getAge(), getBmi(), salary.getMoney());
+        return String.format("老師: %s 年齡: %d bmi:%.1f 薪資: %d", getName(), getAge(), getBmi(), salary.getMoney());
     }
     
 }

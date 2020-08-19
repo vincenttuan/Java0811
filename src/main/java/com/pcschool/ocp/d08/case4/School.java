@@ -35,6 +35,9 @@ public class School {
         System.out.printf("Teacher平均薪資: %.2f\n", salaryAvg);        
                               
         // 將名字中有"2"的人列出
-        
+        //Arrays.stream(persons).forEach(p -> System.out.println(p));
+        Arrays.stream(persons)
+                .filter(p -> p.getName().contains("2"))
+                .forEach(System.out::println);
     }
 }
