@@ -4,7 +4,7 @@ public class Salary {
 
     private int money;
 
-    public Salary(int salary) {
+    public Salary(int money) {
         this.money = money;
     }
 
