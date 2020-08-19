@@ -5,10 +5,11 @@ public class Salary {
     private int money;
 
     public Salary(int salary) {
+        this.money = money;
     }
 
     public int getMoney() {
-        return 0;
+        return money;
     }
 
 }

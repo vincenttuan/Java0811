@@ -12,15 +12,15 @@ public abstract class Person {
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public int getAge() {
-        return 0;
+        return age;
     }
 
     public double getBmi() {
-        return 0;
+        return bmi;
     }
 
     public abstract String toString();
