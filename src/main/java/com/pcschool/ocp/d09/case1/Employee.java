@@ -22,14 +22,14 @@ public class Employee {
     // 一般內部類別
     private class Study {
         public void read() {
-            String appName = "美食 App";
+            String appName = "美食 App"; // java 7 要加上 final, Java 8 不用(系統會自動判斷)
             int hours = 60;
             hours = 50;
             System.out.println("進修時間:" + hours + " H");
             // 方法內部類別
             class App {
                 public void printName() {
-                    System.out.println(appName);
+                    System.out.println(appName); // 取用 final 變數
                 }
             }
             App app = new App();
