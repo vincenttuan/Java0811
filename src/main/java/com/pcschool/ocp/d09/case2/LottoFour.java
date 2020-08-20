@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class LottoFour implements Lotto {
 
-public void printNumber() {
+    public void printNumber() {
         Random r = new Random();
         System.out.printf("%d %d %d %d\n", r.nextInt(10), r.nextInt(10), r.nextInt(10), r.nextInt(10));
     }
