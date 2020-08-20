@@ -37,15 +37,16 @@ public class BMIOperator {
         System.out.println(uo.apply(0.0));
         System.out.println(du.applyAsDouble(0.0));
         
+        //ObjIntConsumer 用法
         class Exam {
             int chinese;
-            int englidh;
+            int english;
         }
         Exam exam = new Exam();
         exam.chinese = 100;
-        exam.englidh = 70;
+        exam.english = 80;
         
-        ObjIntConsumer<Exam> oic = (e, pass) -> System.out.println((e.chinese + e.englidh)/2 >= pass);
-        oic.accept(exam, 60);
+        ObjIntConsumer<Exam> ois = (e, value) -> {System.out.println((e.chinese + e.english)/2 >= value);};
+        ois.accept(exam, 60);
     }
 }
