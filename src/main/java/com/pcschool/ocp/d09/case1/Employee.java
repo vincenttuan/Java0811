@@ -1,7 +1,9 @@
 package com.pcschool.ocp.d09.case1;
 
+// 外部類別
 public class Employee {
     String name = "月例會";
+    // 一般內部類別
     class Job {
         String name = "Java";
         public void program() {
@@ -14,9 +16,20 @@ public class Employee {
         }
     }
     
+    // 一般內部類別
     class Study {
         public void read() {
-            System.out.println("進修");
+            String appName = "美食 App";
+            int hours = 60;
+            System.out.println("進修時間:" + hours + " H");
+            // 方法內部類別
+            class App {
+                public void printName() {
+                    System.out.println(appName);
+                }
+            }
+            App app = new App();
+            app.printName();
         }
     }
     
