@@ -37,8 +37,15 @@ public class BMIOperator {
         System.out.println(uo.apply(0.0));
         System.out.println(du.applyAsDouble(0.0));
         
-        //BinaryOperator<Integer> scoreAvg = (chinese, english) -> (chinese + english)/2;
-        //ObjIntConsumer<BinaryOperator<Integer>> oic = (avg, pass) -> System.out.println(avg.apply(pass, pass));
+        class Exam {
+            int chinese;
+            int englidh;
+        }
+        Exam exam = new Exam();
+        exam.chinese = 100;
+        exam.englidh = 70;
         
+        ObjIntConsumer<Exam> oic = (e, pass) -> System.out.println((e.chinese + e.englidh)/2 >= pass);
+        oic.accept(exam, 60);
     }
 }
