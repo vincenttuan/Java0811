@@ -7,10 +7,13 @@ public class LottoStore {
         Lotto one = new Lotto(){
             @Override
             public void printNumber() {
-                Random r = new Random();
-                System.out.printf("%d\n", r.nextInt(10));
+                System.out.printf("%d\n", new Random().nextInt(10));
             }
         };
         one.printNumber();
+        
+        // Lambda
+        Lotto lotto = () -> System.out.printf("%d\n", new Random().nextInt(10));
+        lotto.printNumber();
     }
 }
