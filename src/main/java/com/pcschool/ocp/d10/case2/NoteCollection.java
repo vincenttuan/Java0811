@@ -12,6 +12,6 @@ public class NoteCollection {
         n1.setNextNote(n2);
         
         System.out.println(n1.getNextNotes());
-        System.out.println(n3.getPreviousNote());
+        System.out.println(n3.getPreviousNotes());
     }
 }
