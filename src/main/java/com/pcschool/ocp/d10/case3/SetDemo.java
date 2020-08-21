@@ -9,7 +9,7 @@ public class SetDemo {
     public static void main(String[] args) {
         // Set 集合容器
         Set s1 = new HashSet();
-        s1.add(100);
+        s1.add(100); // Integer
         s1.add(90);
         s1.add(80);
         System.out.println(s1);
