@@ -22,5 +22,15 @@ public class SetDemo2 {
             System.out.println(next);  // 印出元素內容
         }
         
+        // [國文, 100, 英文, 80, 數學, 90] 物件陣列 Object[]
+        int sum = 0;
+        iter = set.iterator();
+        while (iter.hasNext()) {
+            Object next = iter.next();
+            if(next instanceof Integer) {
+                sum += (Integer)next;
+            }
+        }
+        System.out.println(sum);
     }
 }
