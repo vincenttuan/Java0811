@@ -9,5 +9,6 @@ public class NoteCollection {
         System.out.println(n1.getData());
         System.out.println(n1.getNextNode().getData());
         System.out.println(n1.getNextNode().getNextNode().getData());
+        System.out.println(n2);
     }
 }
