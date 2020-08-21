@@ -9,7 +9,7 @@ public class QueueDemo2 {
         System.out.println(queue.offer("John"));
         System.out.println(queue.offer("Mary"));
         System.out.println(queue.offer("Helen"));
-        System.out.println(queue.offer("Jane"));
+        System.out.println(queue.offer("Jane")); // 設著將 offer 換成 add
         System.out.println(queue);
         
     }
