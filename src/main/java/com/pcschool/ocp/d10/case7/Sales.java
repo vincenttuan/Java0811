@@ -6,18 +6,18 @@ public class Sales {
 
     private String region;
     private String country;
-    private String itemtype;
-    private String saleschannel;
-    private String orderpriority;
-    private Date orderdate;
-    private int orderid;
-    private Date shipdate;
-    private int unitssold;
-    private double unitprice;
-    private double unitcost;
-    private double totalrevenue;
-    private double totalcost;
-    private int totalprofit;
+    private String itemType;
+    private String salesChannel;
+    private String orderPriority;
+    private String orderDate;
+    private int orderId;
+    private String shipDate;
+    private int unitsSold;
+    private double unitPrice;
+    private double unitCost;
+    private double totalRevenue;
+    private double totalCost;
+    private double totalProfit;
 
     public String getRegion() {
         return region;
@@ -35,105 +35,105 @@ public class Sales {
         this.country = country;
     }
 
-    public String getItemtype() {
-        return itemtype;
+    public String getItemType() {
+        return itemType;
     }
 
-    public void setItemtype(String itemtype) {
-        this.itemtype = itemtype;
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
     }
 
-    public String getSaleschannel() {
-        return saleschannel;
+    public String getSalesChannel() {
+        return salesChannel;
     }
 
-    public void setSaleschannel(String saleschannel) {
-        this.saleschannel = saleschannel;
+    public void setSalesChannel(String salesChannel) {
+        this.salesChannel = salesChannel;
     }
 
-    public String getOrderpriority() {
-        return orderpriority;
+    public String getOrderPriority() {
+        return orderPriority;
     }
 
-    public void setOrderpriority(String orderpriority) {
-        this.orderpriority = orderpriority;
+    public void setOrderPriority(String orderPriority) {
+        this.orderPriority = orderPriority;
     }
 
-    public Date getOrderdate() {
-        return orderdate;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public void setOrderdate(Date orderdate) {
-        this.orderdate = orderdate;
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public int getOrderid() {
-        return orderid;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(int orderid) {
-        this.orderid = orderid;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public Date getShipdate() {
-        return shipdate;
+    public String getShipDate() {
+        return shipDate;
     }
 
-    public void setShipdate(Date shipdate) {
-        this.shipdate = shipdate;
+    public void setShipDate(String shipDate) {
+        this.shipDate = shipDate;
     }
 
-    public int getUnitssold() {
-        return unitssold;
+    public int getUnitsSold() {
+        return unitsSold;
     }
 
-    public void setUnitssold(int unitssold) {
-        this.unitssold = unitssold;
+    public void setUnitsSold(int unitsSold) {
+        this.unitsSold = unitsSold;
     }
 
-    public double getUnitprice() {
-        return unitprice;
+    public double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnitprice(double unitprice) {
-        this.unitprice = unitprice;
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public double getUnitcost() {
-        return unitcost;
+    public double getUnitCost() {
+        return unitCost;
     }
 
-    public void setUnitcost(double unitcost) {
-        this.unitcost = unitcost;
+    public void setUnitCost(double unitCost) {
+        this.unitCost = unitCost;
     }
 
-    public double getTotalrevenue() {
-        return totalrevenue;
+    public double getTotalRevenue() {
+        return totalRevenue;
     }
 
-    public void setTotalrevenue(double totalrevenue) {
-        this.totalrevenue = totalrevenue;
+    public void setTotalRevenue(double totalRevenue) {
+        this.totalRevenue = totalRevenue;
     }
 
-    public double getTotalcost() {
-        return totalcost;
+    public double getTotalCost() {
+        return totalCost;
     }
 
-    public void setTotalcost(double totalcost) {
-        this.totalcost = totalcost;
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
     }
 
-    public int getTotalprofit() {
-        return totalprofit;
+    public double getTotalProfit() {
+        return totalProfit;
     }
 
-    public void setTotalprofit(int totalprofit) {
-        this.totalprofit = totalprofit;
+    public void setTotalProfit(double totalProfit) {
+        this.totalProfit = totalProfit;
     }
 
     @Override
     public String toString() {
-        return "Sales{" + "region=" + region + ", country=" + country + ", itemtype=" + itemtype + ", saleschannel=" + saleschannel + ", orderpriority=" + orderpriority + ", orderdate=" + orderdate + ", orderid=" + orderid + ", shipdate=" + shipdate + ", unitssold=" + unitssold + ", unitprice=" + unitprice + ", unitcost=" + unitcost + ", totalrevenue=" + totalrevenue + ", totalcost=" + totalcost + ", totalprofit=" + totalprofit + '}';
+        return "Sales{" + "region=" + region + ", country=" + country + ", itemType=" + itemType + ", salesChannel=" + salesChannel + ", orderPriority=" + orderPriority + ", orderDate=" + orderDate + ", orderId=" + orderId + ", shipDate=" + shipDate + ", unitsSold=" + unitsSold + ", unitPrice=" + unitPrice + ", unitCost=" + unitCost + ", totalRevenue=" + totalRevenue + ", totalCost=" + totalCost + ", totalProfit=" + totalProfit + '}';
     }
-    
+
 }
