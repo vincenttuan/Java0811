@@ -13,5 +13,8 @@ public class NoteCollection {
         
         System.out.println(n1.getNextNotes());
         System.out.println(n3.getPreviousNotes());
+        
+        // 要插入在 100~90 之間 ?
+        Note n4 = new Note(95);
     }
 }
