@@ -32,5 +32,13 @@ public class SetDemo2 {
             }
         }
         System.out.println(sum);
+        
+        // Java 8
+        // [國文, 100, 英文, 80, 數學, 90] 物件陣列 Object[]
+        sum = set.stream()
+                .filter(note -> note instanceof Integer)
+                .mapToInt(score -> (Integer)score)
+                .sum();
+        System.out.println(sum);
     }
 }
