@@ -2,7 +2,7 @@ package com.pcschool.ocp.d10.case5;
 
 import java.util.Objects;
 
-public class Drink {
+public class Drink implements Comparable<Drink>{
     private String name;
     private int price;
 
@@ -59,6 +59,11 @@ public class Drink {
     @Override
     public String toString() {
         return "Drink{" + "name=" + name + ", price=" + price + '}';
+    }
+
+    @Override
+    public int compareTo(Drink other) {
+        return price - other.price;
     }
     
 }
