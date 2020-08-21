@@ -1,6 +1,5 @@
 package com.pcschool.ocp.d10.case4;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -29,9 +28,10 @@ public class Student {
         return scores;
     }
 
-    public void addScore(int score) {
+    public Set<Exam> addScore(int score) {
         Exam exam = new Exam(score);
         scores.add(exam);
+        return scores;
     }
 
     @Override
