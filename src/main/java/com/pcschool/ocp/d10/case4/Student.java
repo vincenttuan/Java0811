@@ -3,7 +3,7 @@ package com.pcschool.ocp.d10.case4;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private Set<Exam> exams;
 
@@ -37,6 +37,13 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" + "name=" + name + ", exams=" + exams + '}';
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        double avg       =  this.exams.stream().mapToInt(e -> e.getScore()).average().getAsDouble();
+        double avg_other = other.exams.stream().mapToInt(e -> e.getScore()).average().getAsDouble();
+        return (int)(avg_other - avg);
     }
     
     
