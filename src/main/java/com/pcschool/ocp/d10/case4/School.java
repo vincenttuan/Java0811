@@ -18,5 +18,16 @@ public class School {
         System.out.println(s1);
         System.out.println(s2);
         
+        // 全班
+        Set<Student> students = new LinkedHashSet<>();
+        students.add(s1);
+        students.add(s2);
+        System.out.println(students);
+        
+        // 以每人的最高分來求平均 ?
+        
+        
+        
+        
     }
 }
