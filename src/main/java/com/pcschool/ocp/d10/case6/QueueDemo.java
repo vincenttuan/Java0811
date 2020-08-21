@@ -7,9 +7,9 @@ public class QueueDemo {
     public static void main(String[] args) throws Exception {
         // 排隊
         Queue<String> queue = new LinkedList<>();
-        queue.add("John");
-        queue.add("Mary");
-        queue.add("Helen");
+        queue.offer("John");
+        queue.offer("Mary");
+        queue.offer("Helen");
         System.out.printf("目前排隊: %s\n", queue);Thread.sleep(3000);
         // 進場
         System.out.println("開始進場");Thread.sleep(3000);
