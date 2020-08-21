@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath ${packageClassName}</exec.args>
+                <exec.args>-Xmx512m -classpath %classpath com.pcschool.ocp.d10.case7.SalesMain</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -24,7 +24,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -Dfile.encoding=UTF-8 -classpath %classpath ${packageClassName}</exec.args>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -Xmx512m -classpath %classpath com.pcschool.ocp.d10.case7.SalesMain</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
             </properties>
@@ -39,7 +39,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath ${packageClassName}</exec.args>
+                <exec.args>-Xmx512m -classpath %classpath com.pcschool.ocp.d10.case7.SalesMain</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>

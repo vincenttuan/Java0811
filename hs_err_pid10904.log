@@ -1,0 +1,729 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1452976 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=10904, tid=0x00000000000026a0
+#
+# JRE version: OpenJDK Runtime Environment (8.0_232-b09) (build 1.8.0_232-b09)
+# Java VM: OpenJDK 64-Bit Server VM (25.232-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000188c9000):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=9888, stack(0x0000000019780000,0x0000000019880000)]
+
+Stack: [0x0000000019780000,0x0000000019880000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    908  363       4       java.lang.StringBuilder::append (9 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000018957000 JavaThread "Service Thread" daemon [_thread_blocked, id=7724, stack(0x0000000019980000,0x0000000019a80000)]
+  0x00000000188d7800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=1644, stack(0x0000000019880000,0x0000000019980000)]
+=>0x00000000188c9000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=9888, stack(0x0000000019780000,0x0000000019880000)]
+  0x00000000188c5800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=8704, stack(0x0000000019680000,0x0000000019780000)]
+  0x000000001885c800 JavaThread "Attach Listener" daemon [_thread_blocked, id=4720, stack(0x0000000019580000,0x0000000019680000)]
+  0x00000000188d4000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9444, stack(0x0000000019480000,0x0000000019580000)]
+  0x0000000017d89800 JavaThread "Finalizer" daemon [_thread_blocked, id=5836, stack(0x0000000019380000,0x0000000019480000)]
+  0x0000000017d85800 JavaThread "Reference Handler" daemon [_thread_blocked, id=1376, stack(0x0000000019280000,0x0000000019380000)]
+  0x0000000001479000 JavaThread "main" [_thread_in_native, id=6276, stack(0x0000000002f70000,0x0000000003070000)]
+
+Other Threads:
+  0x0000000018850800 VMThread [stack: 0x0000000019180000,0x0000000019280000] [id=7956]
+  0x000000001895f800 WatcherThread [stack: 0x0000000019a80000,0x0000000019b80000] [id=6860]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000080a00000, size: 2038 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 71680K, used 34079K [0x00000000d5900000, 0x00000000da400000, 0x0000000100000000)
+  eden space 66560K, 43% used [0x00000000d5900000,0x00000000d754d3d8,0x00000000d9a00000)
+  from space 5120K, 99% used [0x00000000d9f00000,0x00000000da3fa890,0x00000000da400000)
+  to   space 5120K, 0% used [0x00000000d9a00000,0x00000000d9a00000,0x00000000d9f00000)
+ ParOldGen       total 87552K, used 16545K [0x0000000080a00000, 0x0000000085f80000, 0x00000000d5900000)
+  object space 87552K, 18% used [0x0000000080a00000,0x0000000081a28590,0x0000000085f80000)
+ Metaspace       used 5613K, capacity 5814K, committed 6016K, reserved 1056768K
+  class space    used 556K, capacity 597K, committed 640K, reserved 1048576K
+
+Card table byte_map: [0x0000000012530000,0x0000000012930000] byte_map_base: 0x000000001212b000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000755f8170
+ Begin Bits: [0x0000000012fe0000, 0x0000000014fb8000)
+ End Bits:   [0x0000000014fb8000, 0x0000000016f90000)
+
+Polling page: 0x0000000000f60000
+
+CodeCache: size=245760Kb used=2098Kb max_used=2109Kb free=243661Kb
+ bounds [0x0000000003170000, 0x00000000033e0000, 0x0000000012170000]
+ total_blobs=661 nmethods=366 adapters=209
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 0.288 Thread 0x00000000188d7800  238       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+Event: 0.288 Thread 0x00000000188c9000 nmethod 232% 0x000000000330e890 code [0x000000000330e9e0, 0x000000000330ef38]
+Event: 0.289 Thread 0x00000000188d7800 nmethod 238 0x000000000330a110 code [0x000000000330a2e0, 0x000000000330ab08]
+Event: 0.289 Thread 0x00000000188d7800  239       3       java.lang.ref.Finalizer::register (10 bytes)
+Event: 0.289 Thread 0x00000000188d7800 nmethod 239 0x000000000330e110 code [0x000000000330e2a0, 0x000000000330e6c8]
+Event: 0.289 Thread 0x00000000188d7800  240   !   3       java.lang.ref.Finalizer::add (41 bytes)
+Event: 0.289 Thread 0x00000000188d7800 nmethod 240 0x000000000330d6d0 code [0x000000000330d840, 0x000000000330dbf0]
+Event: 0.292 Thread 0x00000000188d7800  241       3       java.io.DataInputStream::readUTF (501 bytes)
+Event: 0.293 Thread 0x00000000188d7800 nmethod 241 0x000000000330f290 code [0x000000000330f660, 0x0000000003311848]
+Event: 0.293 Thread 0x00000000188d7800  245       3       java.io.DataInputStream::readFully (63 bytes)
+Event: 0.293 Thread 0x00000000188d7800 nmethod 245 0x0000000003312dd0 code [0x0000000003312f80, 0x0000000003313428]
+Event: 0.293 Thread 0x00000000188d7800  243  s    3       java.io.BufferedInputStream::read (113 bytes)
+Event: 0.293 Thread 0x00000000188c5800  248       4       java.io.BufferedInputStream::getBufIfOpen (21 bytes)
+Event: 0.293 Thread 0x00000000188c9000  250  s    4       java.io.BufferedInputStream::read (49 bytes)
+Event: 0.294 Thread 0x00000000188d7800 nmethod 243 0x0000000003313650 code [0x0000000003313820, 0x0000000003314158]
+Event: 0.294 Thread 0x00000000188d7800  242       3       java.io.DataInputStream::readUTF (5 bytes)
+Event: 0.294 Thread 0x00000000188d7800 nmethod 242 0x00000000033144d0 code [0x0000000003314640, 0x00000000033147c8]
+Event: 0.294 Thread 0x00000000188d7800  244       3       java.io.DataInputStream::readUnsignedShort (39 bytes)
+Event: 0.294 Thread 0x00000000188d7800 nmethod 244 0x0000000003314850 code [0x00000000033149e0, 0x0000000003314dc8]
+Event: 0.294 Thread 0x00000000188d7800  246       3       java.io.BufferedInputStream::read1 (108 bytes)
+Event: 0.294 Thread 0x00000000188c5800 nmethod 248 0x000000000330cc10 code [0x000000000330cd40, 0x000000000330cdb8]
+Event: 0.294 Thread 0x00000000188d7800 nmethod 246 0x0000000003316cd0 code [0x0000000003316ee0, 0x00000000033177d8]
+Event: 0.294 Thread 0x00000000188d7800  247       3       java.io.DataInputStream::readShort (40 bytes)
+Event: 0.294 Thread 0x00000000188d7800 nmethod 247 0x00000000033165d0 code [0x0000000003316760, 0x0000000003316b48]
+Event: 0.294 Thread 0x00000000188d7800  249       3       java.io.DataInputStream::readFully (9 bytes)
+Event: 0.294 Thread 0x00000000188d7800 nmethod 249 0x0000000003316150 code [0x00000000033162c0, 0x00000000033164e8]
+Event: 0.295 Thread 0x00000000188c9000 nmethod 250 0x0000000003315a90 code [0x0000000003315be0, 0x0000000003316008]
+Event: 0.299 Thread 0x00000000188d7800  251       1       java.lang.Class::getClassLoader0 (5 bytes)
+Event: 0.299 Thread 0x00000000188d7800 nmethod 251 0x0000000003314f50 code [0x00000000033150a0, 0x00000000033151b0]
+Event: 0.299 Thread 0x00000000188d7800  252       3       java.io.InputStream::<init> (5 bytes)
+Event: 0.300 Thread 0x00000000188d7800 nmethod 252 0x000000000331a5d0 code [0x000000000331a740, 0x000000000331a8f0]
+Event: 0.300 Thread 0x00000000188d7800  253       3       java.util.ArrayList::get (11 bytes)
+Event: 0.300 Thread 0x00000000188d7800 nmethod 253 0x0000000003319ed0 code [0x000000000331a060, 0x000000000331a398]
+Event: 0.300 Thread 0x00000000188d7800  254       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+Event: 0.300 Thread 0x00000000188d7800 nmethod 254 0x0000000003318d10 code [0x0000000003318f20, 0x0000000003319a98]
+Event: 0.300 Thread 0x00000000188d7800  255       1       com.google.gson.reflect.TypeToken::getRawType (5 bytes)
+Event: 0.300 Thread 0x00000000188d7800 nmethod 255 0x0000000003318a50 code [0x0000000003318ba0, 0x0000000003318cb0]
+Event: 0.302 Thread 0x00000000188d7800  256       3       com.google.gson.stream.JsonReader::nextNonWhitespace (354 bytes)
+Event: 0.304 Thread 0x00000000188d7800 nmethod 256 0x000000000331abd0 code [0x000000000331b060, 0x000000000331d9a8]
+Event: 0.304 Thread 0x00000000188d7800  257       3       com.google.gson.stream.JsonReader::doPeek (744 bytes)
+Event: 0.308 Thread 0x00000000188d7800 nmethod 257 0x000000000331f390 code [0x0000000003320000, 0x0000000003329088]
+Event: 0.308 Thread 0x00000000188d7800  261       3       com.google.gson.stream.JsonReader::nextQuotedValue (270 bytes)
+Event: 0.309 Thread 0x00000000188c5800  267       4       com.google.gson.stream.JsonReader::nextNonWhitespace (354 bytes)
+Event: 0.309 Thread 0x00000000188d7800 nmethod 261 0x000000000332e9d0 code [0x000000000332ed40, 0x0000000003330ad8]
+Event: 0.309 Thread 0x00000000188d7800  268       3       com.google.gson.stream.JsonReader::peekNumber (481 bytes)
+Event: 0.310 Thread 0x00000000188d7800 nmethod 268 0x0000000003331e10 code [0x0000000003332000, 0x0000000003332d78]
+Event: 0.310 Thread 0x00000000188d7800  262       3       com.google.gson.stream.JsonReader::hasNext (30 bytes)
+Event: 0.310 Thread 0x00000000188d7800 nmethod 262 0x0000000003317ed0 code [0x0000000003318040, 0x0000000003318328]
+Event: 0.310 Thread 0x00000000188d7800  259       3       sun.reflect.ClassFileAssembler::emitByte (11 bytes)
+Event: 0.310 Thread 0x00000000188d7800 nmethod 259 0x0000000003332fd0 code [0x0000000003333140, 0x0000000003333308]
+Event: 0.310 Thread 0x00000000188d7800  271       3       com.google.gson.stream.JsonReader::skipQuotedValue (118 bytes)
+Event: 0.311 Thread 0x00000000188c9000  272       4       java.util.Arrays::copyOfRange (63 bytes)
+Event: 0.311 Thread 0x00000000188c5800 nmethod 267 0x0000000003336210 code [0x0000000003336360, 0x0000000003336568]
+Event: 0.311 Thread 0x00000000188c5800  273       4       com.google.gson.stream.JsonReader::nextQuotedValue (270 bytes)
+Event: 0.311 Thread 0x00000000188d7800 nmethod 271 0x0000000003334cd0 code [0x0000000003334f00, 0x0000000003335b28]
+Event: 0.311 Thread 0x00000000188d7800  258       3       java.util.LinkedHashMap::get (33 bytes)
+Event: 0.311 Thread 0x00000000188d7800 nmethod 258 0x00000000033340d0 code [0x0000000003334260, 0x0000000003334768]
+Event: 0.311 Thread 0x00000000188d7800  264       3       com.google.gson.stream.JsonReader::nextName (116 bytes)
+Event: 0.312 Thread 0x00000000188d7800 nmethod 264 0x0000000003336790 code [0x0000000003336a00, 0x0000000003337a88]
+Event: 0.312 Thread 0x00000000188d7800  265       3       com.google.gson.stream.JsonReader::skipValue (208 bytes)
+Event: 0.312 Thread 0x00000000188c9000 nmethod 272 0x0000000003333c10 code [0x0000000003333d60, 0x0000000003333f78]
+Event: 0.312 Thread 0x00000000188d7800 nmethod 265 0x000000000333a1d0 code [0x000000000333a3c0, 0x000000000333acd8]
+Event: 0.312 Thread 0x00000000188c9000  274       4       java.lang.String::<init> (82 bytes)
+Event: 0.312 Thread 0x00000000188d7800  260       3       sun.reflect.ByteVectorImpl::add (38 bytes)
+Event: 0.312 Thread 0x00000000188d7800 nmethod 260 0x0000000003333750 code [0x00000000033338c0, 0x0000000003333ae8]
+Event: 0.312 Thread 0x00000000188d7800  269       3       com.google.gson.stream.JsonReader::peekKeyword (235 bytes)
+Event: 0.313 Thread 0x00000000188d7800 nmethod 269 0x0000000003338c50 code [0x0000000003338e80, 0x0000000003339b08]
+Event: 0.313 Thread 0x00000000188d7800  270       3       com.google.gson.stream.JsonReader::isLiteral (148 bytes)
+Event: 0.313 Thread 0x00000000188d7800 nmethod 270 0x000000000333af90 code [0x000000000333b180, 0x000000000333bc08]
+Event: 0.313 Thread 0x00000000188d7800  276       3       com.google.gson.stream.JsonReader::peek (144 bytes)
+Event: 0.314 Thread 0x00000000188d7800 nmethod 276 0x0000000003338510 code [0x00000000033386c0, 0x0000000003338b18]
+Event: 0.314 Thread 0x00000000188d7800  263       1       java.lang.reflect.Field::getType (5 bytes)
+Event: 0.314 Thread 0x00000000188d7800 nmethod 263 0x0000000003317bd0 code [0x0000000003317d20, 0x0000000003317e30]
+Event: 0.314 Thread 0x00000000188d7800  266       1       java.lang.reflect.Field::getDeclaringClass (5 bytes)
+Event: 0.314 Thread 0x00000000188d7800 nmethod 266 0x0000000003333410 code [0x0000000003333560, 0x0000000003333670]
+Event: 0.314 Thread 0x00000000188d7800  277       3       java.util.ArrayList::ensureCapacityInternal (13 bytes)
+Event: 0.314 Thread 0x00000000188d7800 nmethod 277 0x000000000333c1d0 code [0x000000000333c360, 0x000000000333c6e8]
+Event: 0.314 Thread 0x00000000188d7800  279       3       com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::read (9 bytes)
+Event: 0.314 Thread 0x00000000188d7800 nmethod 279 0x000000000333c850 code [0x000000000333c9c0, 0x000000000333cbe8]
+Event: 0.314 Thread 0x00000000188d7800  280   !   3       com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::read (116 bytes)
+Event: 0.315 Thread 0x00000000188d7800 nmethod 280 0x000000000333ccd0 code [0x000000000333cf20, 0x000000000333dbf8]
+Event: 0.315 Thread 0x00000000188d7800  283       3       com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1::read (30 bytes)
+Event: 0.315 Thread 0x00000000188d7800 nmethod 283 0x00000000033410d0 code [0x0000000003341240, 0x00000000033415b8]
+Event: 0.315 Thread 0x00000000188d7800  284       3       com.google.gson.internal.bind.TypeAdapters$16::read (6 bytes)
+Event: 0.315 Thread 0x00000000188c9000 nmethod 274 0x00000000033416d0 code [0x0000000003341820, 0x0000000003341b38]
+Event: 0.315 Thread 0x00000000188c9000  278       4       com.google.gson.stream.JsonReader::doPeek (744 bytes)
+Event: 0.315 Thread 0x00000000188d7800 nmethod 284 0x0000000003338150 code [0x00000000033382c0, 0x0000000003338448]
+Event: 0.315 Thread 0x00000000188d7800  285       3       com.google.gson.internal.bind.TypeAdapters$16::read (38 bytes)
+Event: 0.315 Thread 0x00000000188d7800 nmethod 285 0x0000000003340810 code [0x00000000033409c0, 0x0000000003340f78]
+Event: 0.315 Thread 0x00000000188d7800  286       3       com.google.gson.stream.JsonReader::nextString (197 bytes)
+Event: 0.316 Thread 0x00000000188d7800 nmethod 286 0x000000000333e990 code [0x000000000333ec20, 0x000000000333fd88]
+Event: 0.316 Thread 0x00000000188d7800  287       3       java.lang.reflect.Field::set (52 bytes)
+Event: 0.316 Thread 0x00000000188d7800 nmethod 287 0x0000000003341d50 code [0x0000000003341f20, 0x0000000003342568]
+Event: 0.316 Thread 0x00000000188d7800  288       3       java.lang.reflect.Field::getFieldAccessor (35 bytes)
+Event: 0.316 Thread 0x00000000188d7800 nmethod 288 0x000000000333e550 code [0x000000000333e6c0, 0x000000000333e908]
+Event: 0.316 Thread 0x00000000188d7800  290       3       sun.reflect.UnsafeObjectFieldAccessorImpl::set (56 bytes)
+Event: 0.317 Thread 0x00000000188d7800 nmethod 290 0x0000000003342790 code [0x0000000003342a40, 0x0000000003344328]
+Event: 0.317 Thread 0x00000000188d7800  291       3       sun.reflect.UnsafeFieldAccessorImpl::ensureObj (23 bytes)
+Event: 0.318 Thread 0x00000000188d7800 nmethod 291 0x0000000003344cd0 code [0x0000000003344ea0, 0x00000000033457f8]
+Event: 0.318 Thread 0x00000000188d7800  293       3       java.util.ArrayList::add (29 bytes)
+Event: 0.318 Thread 0x00000000188d7800 nmethod 293 0x0000000003345b10 code [0x0000000003345cc0, 0x0000000003346248]
+Event: 0.318 Thread 0x00000000188d7800  281   !   3       com.google.gson.internal.ConstructorConstructor$3::construct (98 bytes)
+Event: 0.319 Thread 0x00000000188d7800 nmethod 281 0x00000000033464d0 code [0x0000000003346800, 0x0000000003348248]
+Event: 0.319 Thread 0x00000000188d7800  298       3       java.lang.reflect.Constructor::newInstance (87 bytes)
+Event: 0.319 Thread 0x00000000188d7800 nmethod 298 0x0000000003348ed0 code [0x00000000033490c0, 0x00000000033497e8]
+Event: 0.319 Thread 0x00000000188d7800  304   !   3       sun.reflect.GeneratedConstructorAccessor1::newInstance (49 bytes)
+Event: 0.319 Thread 0x00000000188d7800 nmethod 304 0x0000000003349a50 code [0x0000000003349c00, 0x000000000334a0a8]
+Event: 0.319 Thread 0x00000000188d7800  299       3       sun.reflect.DelegatingConstructorAccessorImpl::newInstance (9 bytes)
+Event: 0.320 Thread 0x00000000188d7800 nmethod 299 0x000000000334a390 code [0x000000000334a500, 0x000000000334a728]
+Event: 0.320 Thread 0x00000000188d7800  295       3       com.google.gson.stream.JsonReader::push (76 bytes)
+Event: 0.320 Thread 0x00000000188d7800 nmethod 295 0x000000000334a7d0 code [0x000000000334a960, 0x000000000334ad28]
+Event: 0.320 Thread 0x00000000188d7800  282       3       com.pcschool.ocp.d10.case7.Sales::<init> (5 bytes)
+Event: 0.320 Thread 0x00000000188d7800 nmethod 282 0x000000000334aed0 code [0x000000000334b020, 0x000000000334b1d0]
+Event: 0.320 Thread 0x00000000188d7800  300       3       com.google.gson.stream.JsonReader::beginObject (70 bytes)
+Event: 0.320 Thread 0x00000000188c9000 nmethod 278 0x000000000334c6d0 code [0x000000000334c9c0, 0x000000000334d130]
+Event: 0.320 Thread 0x00000000188c9000  289       4       com.google.gson.stream.JsonReader::peekNumber (481 bytes)
+Event: 0.320 Thread 0x00000000188d7800 nmethod 300 0x000000000334da90 code [0x000000000334dce0, 0x000000000334eb08]
+Event: 0.320 Thread 0x00000000188d7800  301       3       com.google.gson.stream.JsonReader::endObject (100 bytes)
+Event: 0.321 Thread 0x00000000188d7800 nmethod 301 0x000000000334f090 code [0x000000000334f2e0, 0x0000000003350258]
+Event: 0.321 Thread 0x00000000188d7800  306       3       java.lang.AbstractStringBuilder::append (40 bytes)
+Event: 0.321 Thread 0x00000000188d7800 nmethod 306 0x000000000334bc50 code [0x000000000334be00, 0x000000000334c448]
+Event: 0.321 Thread 0x00000000188d7800  309   !   3       java.io.StringReader::read (133 bytes)
+Event: 0.322 Thread 0x00000000188d7800 nmethod 309 0x00000000033508d0 code [0x0000000003350aa0, 0x00000000033513c8]
+Event: 0.322 Thread 0x00000000188d7800  311       3       com.google.gson.stream.JsonReader::fillBuffer (168 bytes)
+Event: 0.322 Thread 0x00000000188d7800 nmethod 311 0x000000000334b290 code [0x000000000334b420, 0x000000000334ba18]
+Event: 0.322 Thread 0x00000000188d7800  310       3       java.io.StringReader::ensureOpen (18 bytes)
+Event: 0.322 Thread 0x00000000188d7800 nmethod 310 0x0000000003351890 code [0x0000000003351a00, 0x0000000003351c48]
+Event: 0.326 Thread 0x00000000188c9000 nmethod 289 0x0000000003353710 code [0x0000000003353d20, 0x0000000003354378]
+Event: 0.326 Thread 0x00000000188c9000  308       4       com.google.gson.stream.JsonReader::skipQuotedValue (118 bytes)
+Event: 0.326 Thread 0x00000000188c5800 nmethod 273 0x0000000003356c10 code [0x0000000003356de0, 0x0000000003357ab0]
+Event: 0.327 Thread 0x00000000188c5800  307       4       com.google.gson.stream.JsonReader::skipValue (208 bytes)
+Event: 0.328 Thread 0x00000000188d7800  314       3       java.lang.StringBuilder::append (10 bytes)
+Event: 0.328 Thread 0x00000000188d7800 nmethod 314 0x0000000003353390 code [0x0000000003353500, 0x0000000003353688]
+Event: 0.329 Thread 0x00000000188c9000 nmethod 308 0x0000000003354bd0 code [0x0000000003354d20, 0x0000000003355048]
+Event: 0.329 Thread 0x00000000188c9000  313       4       java.lang.String::equals (81 bytes)
+Event: 0.331 Thread 0x00000000188c9000 nmethod 313 0x0000000003358410 code [0x0000000003358560, 0x0000000003358798]
+Event: 0.331 Thread 0x00000000188c9000  315   !   4       com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::read (116 bytes)
+Event: 0.332 Thread 0x00000000188c5800 nmethod 307 0x0000000003356110 code [0x0000000003356280, 0x00000000033567b8]
+Event: 0.332 Thread 0x00000000188c5800  294       4       java.util.HashMap::getNode (148 bytes)
+Event: 0.335 Thread 0x00000000188c5800 nmethod 294 0x0000000003355950 code [0x0000000003355ac0, 0x0000000003355eb8]
+Event: 0.335 Thread 0x00000000188c5800  316       4       com.google.gson.stream.JsonReader::peek (144 bytes)
+Event: 0.336 Thread 0x00000000188c5800 nmethod 316 0x00000000033526d0 code [0x0000000003352900, 0x0000000003352a28]
+Event: 0.336 Thread 0x00000000188c5800  312       4       com.google.gson.stream.JsonReader::isLiteral (148 bytes)
+Event: 0.337 Thread 0x00000000188c5800 nmethod 312 0x00000000033551d0 code [0x00000000033557c0, 0x0000000003355868]
+Event: 0.337 Thread 0x00000000188c5800  303       4       java.lang.Math::min (11 bytes)
+Event: 0.337 Thread 0x00000000188c5800 nmethod 303 0x00000000033549d0 code [0x0000000003354b00, 0x0000000003354b58]
+Event: 0.337 Thread 0x00000000188c5800  297       4       com.google.gson.stream.JsonReader::hasNext (30 bytes)
+Event: 0.338 Thread 0x00000000188c5800 nmethod 297 0x0000000003358cd0 code [0x0000000003358e20, 0x0000000003358ee8]
+Event: 0.338 Thread 0x00000000188c5800  317       4       com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1::read (30 bytes)
+Event: 0.342 Thread 0x00000000188c5800 nmethod 317 0x0000000003359fd0 code [0x000000000335a220, 0x000000000335a6d8]
+Event: 0.342 Thread 0x00000000188c5800  319       4       com.google.gson.internal.bind.TypeAdapters$16::read (38 bytes)
+Event: 0.345 Thread 0x00000000188c5800 nmethod 319 0x000000000335b550 code [0x000000000335b780, 0x000000000335b958]
+Event: 0.345 Thread 0x00000000188c5800  320       4       com.google.gson.stream.JsonReader::nextString (197 bytes)
+Event: 0.345 Thread 0x00000000188c5800 nmethod 320 0x00000000033588d0 code [0x0000000003358a20, 0x0000000003358b48]
+Event: 0.345 Thread 0x00000000188c5800  321       4       java.lang.reflect.Field::set (52 bytes)
+Event: 0.347 Thread 0x00000000188c5800 nmethod 321 0x0000000003352c10 code [0x0000000003352d60, 0x0000000003352ff8]
+Event: 0.348 Thread 0x00000000188c5800  318       4       com.google.gson.internal.bind.TypeAdapters$16::read (6 bytes)
+Event: 0.350 Thread 0x00000000188c5800 nmethod 318 0x000000000335fbd0 code [0x000000000335fe00, 0x000000000335ffd8]
+Event: 0.350 Thread 0x00000000188c5800  322       4       java.util.ArrayList::add (29 bytes)
+Event: 0.351 Thread 0x00000000188c5800 nmethod 322 0x000000000335b110 code [0x000000000335b260, 0x000000000335b3c8]
+Event: 0.351 Thread 0x00000000188c5800  323       4       java.lang.reflect.Constructor::newInstance (87 bytes)
+Event: 0.352 Thread 0x00000000188c5800 nmethod 323 0x0000000003351fd0 code [0x0000000003352140, 0x0000000003352358]
+Event: 0.352 Thread 0x00000000188c5800  324       4       com.google.gson.stream.JsonReader::push (76 bytes)
+Event: 0.353 Thread 0x00000000188c5800 nmethod 324 0x0000000003351d10 code [0x0000000003351e40, 0x0000000003351ef8]
+Event: 0.353 Thread 0x00000000188c5800  325       4       com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::read (9 bytes)
+Event: 0.364 Thread 0x00000000188d7800  332       3       java.lang.StringBuilder::append (8 bytes)
+Event: 0.364 Thread 0x00000000188c9000 nmethod 315 0x0000000003360390 code [0x00000000033607e0, 0x0000000003362090]
+Event: 0.364 Thread 0x00000000188d7800 nmethod 332 0x000000000335f4d0 code [0x000000000335f660, 0x000000000335f9d8]
+Event: 0.364 Thread 0x00000000188d7800  333       3       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::appendTo (72 bytes)
+Event: 0.364 Thread 0x00000000188c9000  330       4       java.util.ArrayList::get (11 bytes)
+Event: 0.364 Thread 0x00000000188d7800 nmethod 333 0x000000000335e690 code [0x000000000335e860, 0x000000000335f288]
+Event: 0.364 Thread 0x00000000188d7800  334       3       java.lang.String::valueOf (14 bytes)
+Event: 0.365 Thread 0x00000000188d7800 nmethod 334 0x000000000335e210 code [0x000000000335e380, 0x000000000335e5c8]
+Event: 0.365 Thread 0x00000000188d7800  337       3       sun.misc.FloatingDecimal::getBinaryToASCIIConverter (183 bytes)
+Event: 0.365 Thread 0x00000000188c9000 nmethod 330 0x000000000335ca10 code [0x000000000335cb40, 0x000000000335cbf8]
+Event: 0.365 Thread 0x00000000188c9000  326       4       com.google.gson.stream.JsonReader::beginObject (70 bytes)
+Event: 0.365 Thread 0x00000000188d7800 nmethod 337 0x000000000335bc90 code [0x000000000335be60, 0x000000000335c6a8]
+Event: 0.365 Thread 0x00000000188d7800  338       3       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::getChars (502 bytes)
+Event: 0.365 Thread 0x00000000188c9000 nmethod 326 0x00000000033655d0 code [0x0000000003365720, 0x0000000003365818]
+Event: 0.365 Thread 0x00000000188c9000  342       4       java.lang.String::getChars (62 bytes)
+Event: 0.366 Thread 0x00000000188d7800 nmethod 338 0x0000000003367150 code [0x00000000033673c0, 0x0000000003368418]
+Event: 0.366 Thread 0x00000000188d7800  341       3       java.lang.StringBuilder::append (9 bytes)
+Event: 0.366 Thread 0x00000000188d7800 nmethod 341 0x0000000003364ed0 code [0x0000000003365060, 0x0000000003365458]
+Event: 0.366 Thread 0x00000000188d7800  335       3       java.lang.StringBuilder::append (8 bytes)
+Event: 0.366 Thread 0x00000000188d7800 nmethod 335 0x0000000003364b50 code [0x0000000003364cc0, 0x0000000003364e48]
+Event: 0.366 Thread 0x00000000188d7800  336       3       java.lang.AbstractStringBuilder::append (62 bytes)
+Event: 0.366 Thread 0x00000000188c9000 nmethod 342 0x0000000003364710 code [0x0000000003364860, 0x00000000033649d8]
+Event: 0.366 Thread 0x00000000188c9000  344       4       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 0.367 Thread 0x00000000188d7800 nmethod 336 0x000000000335d1d0 code [0x000000000335d3c0, 0x000000000335dcf8]
+Event: 0.367 Thread 0x00000000188d7800  340       3       java.lang.Integer::stringSize (21 bytes)
+Event: 0.367 Thread 0x00000000188d7800 nmethod 340 0x000000000335cd10 code [0x000000000335ce80, 0x000000000335d090]
+Event: 0.367 Thread 0x00000000188d7800  339       3       java.lang.AbstractStringBuilder::appendNull (56 bytes)
+Event: 0.367 Thread 0x00000000188d7800 nmethod 339 0x0000000003366710 code [0x00000000033668c0, 0x0000000003366e58]
+Event: 0.367 Thread 0x00000000188d7800  343       3       java.lang.Integer::getChars (131 bytes)
+Event: 0.367 Thread 0x00000000188d7800 nmethod 343 0x0000000003365cd0 code [0x0000000003365e60, 0x00000000033662d0]
+Event: 0.367 Thread 0x00000000188d7800  346       3       java.util.Arrays$ArrayList::size (6 bytes)
+Event: 0.368 Thread 0x00000000188d7800 nmethod 346 0x0000000003365950 code [0x0000000003365aa0, 0x0000000003365bf0]
+Event: 0.368 Thread 0x00000000188d7800  347       3       java.util.Arrays$ArrayList::get (7 bytes)
+Event: 0.368 Thread 0x00000000188d7800 nmethod 347 0x0000000003364350 code [0x00000000033644a0, 0x0000000003364610]
+Event: 0.368 Thread 0x00000000188d7800  348       3       java.util.AbstractList$Itr::hasNext (20 bytes)
+Event: 0.368 Thread 0x00000000188d7800 nmethod 348 0x000000000336a110 code [0x000000000336a280, 0x000000000336a508]
+Event: 0.368 Thread 0x00000000188d7800  349   !   3       java.util.AbstractList$Itr::next (45 bytes)
+Event: 0.368 Thread 0x00000000188d7800 nmethod 349 0x0000000003369610 code [0x00000000033697e0, 0x0000000003369e38]
+Event: 0.368 Thread 0x00000000188d7800  350       3       java.util.AbstractList$Itr::checkForComodification (23 bytes)
+Event: 0.368 Thread 0x00000000188d7800 nmethod 350 0x0000000003369190 code [0x0000000003369300, 0x0000000003369528]
+Event: 0.368 Thread 0x00000000188d7800  351       3       com.pcschool.ocp.d10.case7.Sales::toString (184 bytes)
+Event: 0.370 Thread 0x00000000188d7800 nmethod 351 0x000000000336a5d0 code [0x000000000336ab40, 0x000000000336e148]
+Event: 0.370 Thread 0x00000000188d7800  353       1       java.util.Arrays$ArrayList::size (6 bytes)
+Event: 0.370 Thread 0x00000000188d7800 nmethod 353 0x0000000003368e90 code [0x0000000003368fe0, 0x00000000033690f0]
+Event: 0.370 Thread 0x00000000188d7800  354       1       java.util.Arrays$ArrayList::get (7 bytes)
+Event: 0.370 Thread 0x00000000188d7800 nmethod 354 0x000000000336f910 code [0x000000000336fa60, 0x000000000336fb90]
+Event: 0.373 Thread 0x00000000188c9000 nmethod 344 0x0000000003372fd0 code [0x0000000003373140, 0x0000000003373898]
+Event: 0.373 Thread 0x00000000188c9000  345       4       java.lang.StringBuilder::append (8 bytes)
+Event: 0.386 Thread 0x00000000188d7800  359   !   3       java.util.zip.ZipFile$ZipFileInputStream::close (110 bytes)
+Event: 0.386 Thread 0x00000000188c9000 nmethod 345 0x0000000003373e50 code [0x0000000003373fc0, 0x0000000003374738]
+Event: 0.386 Thread 0x00000000188c9000  352       4       java.lang.AbstractStringBuilder::append (40 bytes)
+Event: 0.387 Thread 0x00000000188d7800 nmethod 359 0x0000000003372290 code [0x0000000003372440, 0x0000000003372c58]
+Event: 0.387 Thread 0x00000000188d7800  360       3       sun.misc.VM::addFinalRefCount (24 bytes)
+Event: 0.387 Thread 0x00000000188d7800 nmethod 360 0x0000000003371f10 code [0x0000000003372060, 0x0000000003372210]
+Event: 0.387 Thread 0x00000000188d7800  361   !   3       java.lang.ref.Reference::tryHandlePending (115 bytes)
+Event: 0.388 Thread 0x00000000188d7800 nmethod 361 0x0000000003370b10 code [0x0000000003370d40, 0x00000000033719e8]
+Event: 0.390 Thread 0x00000000188c5800 nmethod 325 0x0000000003376e90 code [0x00000000033772e0, 0x0000000003378af0]
+Event: 0.391 Thread 0x00000000188c9000 nmethod 352 0x0000000003375150 code [0x00000000033752a0, 0x00000000033756d8]
+Event: 0.391 Thread 0x00000000188c5800  364       4       java.lang.Integer::getChars (131 bytes)
+Event: 0.391 Thread 0x00000000188c9000  355       4       sun.misc.FloatingDecimal::getBinaryToASCIIConverter (183 bytes)
+Event: 0.391 Thread 0x00000000188c9000 nmethod 355 0x0000000003374dd0 code [0x0000000003374f20, 0x0000000003375038]
+Event: 0.391 Thread 0x00000000188c9000  356       4       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::getChars (502 bytes)
+Event: 0.392 Thread 0x00000000188c5800 nmethod 364 0x0000000003370710 code [0x0000000003370860, 0x0000000003370998]
+Event: 0.392 Thread 0x00000000188c5800  357       4       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::appendTo (72 bytes)
+Event: 0.393 Thread 0x00000000188c9000 nmethod 356 0x0000000003370210 code [0x0000000003370360, 0x0000000003370518]
+Event: 0.393 Thread 0x00000000188c9000  358       4       java.lang.StringBuilder::append (8 bytes)
+Event: 0.396 Thread 0x00000000188c9000 nmethod 358 0x000000000337cd10 code [0x000000000337ce60, 0x000000000337d1b8]
+Event: 0.396 Thread 0x00000000188c9000  363       4       java.lang.StringBuilder::append (9 bytes)
+Event: 0.397 Thread 0x00000000188c5800 nmethod 357 0x000000000337c290 code [0x000000000337c400, 0x000000000337c8a8]
+Event: 0.397 Thread 0x00000000188c5800  362       4       java.lang.AbstractStringBuilder::append (62 bytes)
+Event: 0.402 Thread 0x00000000188c5800 nmethod 362 0x000000000337b850 code [0x000000000337b9a0, 0x000000000337be78]
+Event: 0.402 Thread 0x00000000188c5800  367       4       sun.nio.cs.ext.DoubleByte$Encoder::encodeChar (21 bytes)
+Event: 0.403 Thread 0x00000000188c5800 nmethod 367 0x000000000336fed0 code [0x0000000003370020, 0x0000000003370118]
+Event: 0.403 Thread 0x00000000188c5800  365       4       java.util.AbstractList$Itr::hasNext (20 bytes)
+Event: 0.404 Thread 0x00000000188c5800 nmethod 365 0x000000000337b550 code [0x000000000337b6a0, 0x000000000337b758]
+Event: 0.404 Thread 0x00000000188c5800  366   !   4       java.util.AbstractList$Itr::next (45 bytes)
+Event: 0.404 Thread 0x00000000188c5800 nmethod 366 0x000000000337f050 code [0x000000000337f1a0, 0x000000000337f298]
+Event: 0.404 Thread 0x00000000188c5800  302       4       java.util.LinkedHashMap::get (33 bytes)
+Event: 0.410 Thread 0x00000000188c5800 nmethod 302 0x0000000003380110 code [0x0000000003380280, 0x0000000003380838]
+Event: 0.410 Thread 0x00000000188c5800  305       4       com.google.gson.stream.JsonReader::nextName (116 bytes)
+Event: 0.411 Thread 0x00000000188c5800 nmethod 305 0x000000000337fd10 code [0x000000000337fe60, 0x000000000337ffa8]
+Event: 0.411 Thread 0x00000000188c5800  327       4       com.google.gson.stream.JsonReader::endObject (100 bytes)
+Event: 0.412 Thread 0x00000000188c5800 nmethod 327 0x000000000337d450 code [0x000000000337d5a0, 0x000000000337d6b8]
+Event: 0.412 Thread 0x00000000188c5800  328   !   4       com.google.gson.internal.ConstructorConstructor$3::construct (98 bytes)
+Event: 0.414 Thread 0x00000000188c5800 nmethod 328 0x000000000337f410 code [0x000000000337f580, 0x000000000337f7d8]
+
+GC Heap History (4 events):
+Event: 0.209 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 38400K, used 27038K [0x00000000d5900000, 0x00000000d8380000, 0x0000000100000000)
+  eden space 33280K, 81% used [0x00000000d5900000,0x00000000d7367a80,0x00000000d7980000)
+  from space 5120K, 0% used [0x00000000d7e80000,0x00000000d7e80000,0x00000000d8380000)
+  to   space 5120K, 0% used [0x00000000d7980000,0x00000000d7980000,0x00000000d7e80000)
+ ParOldGen       total 87552K, used 0K [0x0000000080a00000, 0x0000000085f80000, 0x00000000d5900000)
+  object space 87552K, 0% used [0x0000000080a00000,0x0000000080a00000,0x0000000085f80000)
+ Metaspace       used 4198K, capacity 4600K, committed 4864K, reserved 1056768K
+  class space    used 413K, capacity 428K, committed 512K, reserved 1048576K
+Event: 0.214 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 38400K, used 877K [0x00000000d5900000, 0x00000000da400000, 0x0000000100000000)
+  eden space 33280K, 0% used [0x00000000d5900000,0x00000000d5900000,0x00000000d7980000)
+  from space 5120K, 17% used [0x00000000d7980000,0x00000000d7a5b620,0x00000000d7e80000)
+  to   space 5120K, 0% used [0x00000000d9f00000,0x00000000d9f00000,0x00000000da400000)
+ ParOldGen       total 87552K, used 8200K [0x0000000080a00000, 0x0000000085f80000, 0x00000000d5900000)
+  object space 87552K, 9% used [0x0000000080a00000,0x0000000081202010,0x0000000085f80000)
+ Metaspace       used 4198K, capacity 4600K, committed 4864K, reserved 1056768K
+  class space    used 413K, capacity 428K, committed 512K, reserved 1048576K
+}
+Event: 0.378 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 38400K, used 33714K [0x00000000d5900000, 0x00000000da400000, 0x0000000100000000)
+  eden space 33280K, 98% used [0x00000000d5900000,0x00000000d79115a8,0x00000000d7980000)
+  from space 5120K, 17% used [0x00000000d7980000,0x00000000d7a5b620,0x00000000d7e80000)
+  to   space 5120K, 0% used [0x00000000d9f00000,0x00000000d9f00000,0x00000000da400000)
+ ParOldGen       total 87552K, used 8200K [0x0000000080a00000, 0x0000000085f80000, 0x00000000d5900000)
+  object space 87552K, 9% used [0x0000000080a00000,0x0000000081202010,0x0000000085f80000)
+ Metaspace       used 5609K, capacity 5814K, committed 6016K, reserved 1056768K
+  class space    used 556K, capacity 597K, committed 640K, reserved 1048576K
+Event: 0.386 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 71680K, used 5098K [0x00000000d5900000, 0x00000000da400000, 0x0000000100000000)
+  eden space 66560K, 0% used [0x00000000d5900000,0x00000000d5900000,0x00000000d9a00000)
+  from space 5120K, 99% used [0x00000000d9f00000,0x00000000da3fa890,0x00000000da400000)
+  to   space 5120K, 0% used [0x00000000d9a00000,0x00000000d9a00000,0x00000000d9f00000)
+ ParOldGen       total 87552K, used 16545K [0x0000000080a00000, 0x0000000085f80000, 0x00000000d5900000)
+  object space 87552K, 18% used [0x0000000080a00000,0x0000000081a28590,0x0000000085f80000)
+ Metaspace       used 5609K, capacity 5814K, committed 6016K, reserved 1056768K
+  class space    used 556K, capacity 597K, committed 640K, reserved 1048576K
+}
+
+Deoptimization events (3 events):
+Event: 0.209 Thread 0x0000000001479000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032c8cd4 method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 5
+Event: 0.357 Thread 0x0000000001479000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003358ea0 method=com.google.gson.stream.JsonReader.hasNext()Z @ 21
+Event: 0.359 Thread 0x0000000001479000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000334cec0 method=com.google.gson.stream.JsonReader.doPeek()I @ 315
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (9 events):
+Event: 0.027 Thread 0x0000000001479000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000d5907cb8) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.
+Event: 0.027 Thread 0x0000000001479000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000d5907fa0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 4014]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e1788) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e1b80) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e5ea0) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e6298) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e7b40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.118 Thread 0x0000000001479000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d59e7f38) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1501]
+Event: 0.301 Thread 0x0000000001479000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 18> (0x00000000d6359f40) thrown at [D:\a\1\s\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 371]
+
+Events (250 events):
+Event: 0.271 loading class com/google/gson/internal/bind/ObjectTypeAdapter$1
+Event: 0.271 loading class com/google/gson/internal/bind/ObjectTypeAdapter$1 done
+Event: 0.272 loading class com/google/gson/Gson$4
+Event: 0.272 loading class com/google/gson/Gson$4 done
+Event: 0.272 loading class java/util/concurrent/atomic/AtomicLongArray
+Event: 0.272 loading class java/util/concurrent/atomic/AtomicLongArray done
+Event: 0.272 loading class com/google/gson/Gson$5
+Event: 0.272 loading class com/google/gson/Gson$5 done
+Event: 0.273 loading class com/google/gson/internal/bind/DateTypeAdapter
+Event: 0.273 loading class com/google/gson/internal/bind/DateTypeAdapter done
+Event: 0.273 loading class java/text/ParseException
+Event: 0.273 loading class java/text/ParseException done
+Event: 0.273 loading class com/google/gson/internal/bind/DateTypeAdapter$1
+Event: 0.273 loading class com/google/gson/internal/bind/DateTypeAdapter$1 done
+Event: 0.274 loading class com/google/gson/internal/bind/TimeTypeAdapter
+Event: 0.274 loading class com/google/gson/internal/bind/TimeTypeAdapter done
+Event: 0.274 loading class java/text/DateFormat
+Event: 0.274 loading class java/text/DateFormat done
+Event: 0.274 loading class java/text/SimpleDateFormat
+Event: 0.274 loading class java/text/SimpleDateFormat done
+Event: 0.274 loading class java/util/Date
+Event: 0.275 loading class java/util/Date done
+Event: 0.275 loading class java/sql/Time
+Event: 0.275 loading class java/sql/Time done
+Event: 0.275 loading class com/google/gson/internal/bind/TimeTypeAdapter$1
+Event: 0.275 loading class com/google/gson/internal/bind/TimeTypeAdapter$1 done
+Event: 0.275 loading class com/google/gson/internal/bind/SqlDateTypeAdapter
+Event: 0.275 loading class com/google/gson/internal/bind/SqlDateTypeAdapter done
+Event: 0.275 loading class java/sql/Date
+Event: 0.276 loading class java/sql/Date done
+Event: 0.276 loading class com/google/gson/internal/bind/SqlDateTypeAdapter$1
+Event: 0.276 loading class com/google/gson/internal/bind/SqlDateTypeAdapter$1 done
+Event: 0.276 loading class com/google/gson/internal/bind/ArrayTypeAdapter
+Event: 0.276 loading class com/google/gson/internal/bind/ArrayTypeAdapter done
+Event: 0.276 loading class com/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper
+Event: 0.276 loading class com/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper done
+Event: 0.277 loading class com/google/gson/internal/bind/ArrayTypeAdapter$1
+Event: 0.277 loading class com/google/gson/internal/bind/ArrayTypeAdapter$1 done
+Event: 0.277 loading class com/google/gson/internal/bind/CollectionTypeAdapterFactory
+Event: 0.277 loading class com/google/gson/internal/bind/CollectionTypeAdapterFactory done
+Event: 0.278 loading class com/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter
+Event: 0.278 loading class com/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter done
+Event: 0.278 loading class com/google/gson/internal/bind/MapTypeAdapterFactory
+Event: 0.278 loading class com/google/gson/internal/bind/MapTypeAdapterFactory done
+Event: 0.278 loading class com/google/gson/internal/bind/MapTypeAdapterFactory$Adapter
+Event: 0.278 loading class com/google/gson/internal/bind/MapTypeAdapterFactory$Adapter done
+Event: 0.279 loading class com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory
+Event: 0.279 loading class com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory done
+Event: 0.279 loading class com/google/gson/internal/bind/TreeTypeAdapter
+Event: 0.279 loading class com/google/gson/internal/bind/TreeTypeAdapter done
+Event: 0.280 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory
+Event: 0.280 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory done
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter done
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField done
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1
+Event: 0.281 loading class com/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1 done
+Event: 0.282 loading class com/pcschool/ocp/d10/case7/Sales
+Event: 0.282 loading class com/pcschool/ocp/d10/case7/Sales done
+Event: 0.282 loading class com/google/gson/internal/JsonReaderInternalAccess
+Event: 0.282 loading class com/google/gson/internal/JsonReaderInternalAccess done
+Event: 0.283 loading class com/google/gson/stream/JsonReader$1
+Event: 0.283 loading class com/google/gson/stream/JsonReader$1 done
+Event: 0.284 loading class com/google/gson/stream/JsonToken
+Event: 0.284 loading class com/google/gson/stream/JsonToken done
+Event: 0.284 loading class com/google/gson/internal/$Gson$Types$GenericArrayTypeImpl
+Event: 0.284 loading class com/google/gson/internal/$Gson$Types$GenericArrayTypeImpl done
+Event: 0.285 loading class java/sql/Timestamp
+Event: 0.285 loading class java/sql/Timestamp done
+Event: 0.285 loading class com/google/gson/annotations/JsonAdapter
+Event: 0.285 loading class com/google/gson/annotations/JsonAdapter done
+Event: 0.286 loading class java/util/HashMap$EntrySet
+Event: 0.286 loading class java/util/HashMap$EntrySet done
+Event: 0.286 loading class java/util/HashMap$EntryIterator
+Event: 0.286 loading class java/util/HashMap$HashIterator
+Event: 0.286 loading class java/util/HashMap$HashIterator done
+Event: 0.286 loading class java/util/HashMap$EntryIterator done
+Event: 0.286 loading class sun/reflect/annotation/AnnotationParser
+Event: 0.286 loading class sun/reflect/annotation/AnnotationParser done
+Event: 0.287 loading class com/google/gson/internal/ConstructorConstructor$3
+Event: 0.287 loading class com/google/gson/internal/ConstructorConstructor$3 done
+Event: 0.287 loading class java/lang/InstantiationException
+Event: 0.287 loading class java/lang/InstantiationException done
+Event: 0.287 loading class java/lang/reflect/InvocationTargetException
+Event: 0.287 loading class java/lang/reflect/InvocationTargetException done
+Event: 0.287 loading class java/lang/IllegalAccessException
+Event: 0.287 loading class java/lang/IllegalAccessException done
+Event: 0.287 loading class java/lang/reflect/TypeVariable
+Event: 0.287 loading class java/lang/reflect/TypeVariable done
+Event: 0.287 loading class com/google/gson/annotations/SerializedName
+Event: 0.287 loading class com/google/gson/annotations/SerializedName done
+Event: 0.288 loading class java/util/Collections$SingletonList
+Event: 0.288 loading class java/util/Collections$SingletonList done
+Event: 0.288 loading class com/google/gson/internal/Primitives
+Event: 0.288 loading class com/google/gson/internal/Primitives done
+Event: 0.289 loading class sun/util/locale/provider/DateFormatProviderImpl
+Event: 0.289 loading class sun/util/locale/provider/DateFormatProviderImpl done
+Event: 0.289 loading class java/text/DateFormat$Field
+Event: 0.289 loading class java/text/Format$Field
+Event: 0.289 loading class java/text/AttributedCharacterIterator$Attribute
+Event: 0.289 loading class java/text/AttributedCharacterIterator$Attribute done
+Event: 0.289 loading class java/text/Format$Field done
+Event: 0.289 loading class java/text/DateFormat$Field done
+Event: 0.289 loading class java/util/TimeZone
+Event: 0.289 loading class java/util/TimeZone done
+Event: 0.290 loading class sun/util/calendar/ZoneInfo
+Event: 0.290 loading class sun/util/calendar/ZoneInfo done
+Event: 0.290 loading class sun/util/calendar/CalendarSystem
+Event: 0.290 loading class sun/util/calendar/CalendarSystem done
+Event: 0.290 loading class sun/util/calendar/Gregorian
+Event: 0.290 loading class sun/util/calendar/BaseCalendar
+Event: 0.290 loading class sun/util/calendar/AbstractCalendar
+Event: 0.290 loading class sun/util/calendar/AbstractCalendar done
+Event: 0.290 loading class sun/util/calendar/BaseCalendar done
+Event: 0.290 loading class sun/util/calendar/Gregorian done
+Event: 0.291 loading class sun/util/calendar/ZoneInfoFile
+Event: 0.291 loading class sun/util/calendar/ZoneInfoFile done
+Event: 0.291 loading class sun/util/calendar/ZoneInfoFile$1
+Event: 0.291 loading class sun/util/calendar/ZoneInfoFile$1 done
+Event: 0.295 loading class sun/util/calendar/ZoneInfoFile$ZoneOffsetTransitionRule
+Event: 0.295 loading class sun/util/calendar/ZoneInfoFile$ZoneOffsetTransitionRule done
+Event: 0.295 loading class sun/util/calendar/ZoneInfoFile$Checksum
+Event: 0.295 loading class java/util/zip/CRC32
+Event: 0.295 loading class java/util/zip/Checksum
+Event: 0.295 loading class java/util/zip/Checksum done
+Event: 0.295 loading class java/util/zip/CRC32 done
+Event: 0.295 loading class sun/util/calendar/ZoneInfoFile$Checksum done
+Event: 0.296 loading class java/util/TimeZone$1
+Event: 0.296 loading class java/util/TimeZone$1 done
+Event: 0.296 loading class sun/util/spi/CalendarProvider
+Event: 0.296 loading class sun/util/spi/CalendarProvider done
+Event: 0.296 loading class sun/util/locale/provider/CalendarProviderImpl
+Event: 0.296 loading class sun/util/locale/provider/CalendarProviderImpl done
+Event: 0.296 loading class java/util/Calendar$Builder
+Event: 0.296 loading class java/util/Calendar$Builder done
+Event: 0.296 loading class sun/util/locale/provider/CalendarDataUtility
+Event: 0.297 loading class sun/util/locale/provider/CalendarDataUtility done
+Event: 0.297 loading class sun/util/locale/provider/CalendarDataProviderImpl
+Event: 0.297 loading class sun/util/locale/provider/CalendarDataProviderImpl done
+Event: 0.297 loading class sun/util/locale/provider/CalendarDataUtility$CalendarWeekParameterGetter
+Event: 0.297 loading class sun/util/locale/provider/CalendarDataUtility$CalendarWeekParameterGetter done
+Event: 0.297 loading class sun/util/resources/CalendarData
+Event: 0.297 loading class sun/util/resources/CalendarData done
+Event: 0.297 loading class sun/util/resources/en/CalendarData_en
+Event: 0.297 loading class sun/util/resources/en/CalendarData_en done
+Event: 0.297 loading class sun/util/calendar/Gregorian$Date
+Event: 0.297 loading class sun/util/calendar/BaseCalendar$Date
+Event: 0.297 loading class sun/util/calendar/CalendarDate
+Event: 0.298 loading class sun/util/calendar/CalendarDate done
+Event: 0.298 loading class sun/util/calendar/BaseCalendar$Date done
+Event: 0.298 loading class sun/util/calendar/Gregorian$Date done
+Event: 0.298 loading class sun/util/calendar/CalendarUtils
+Event: 0.298 loading class sun/util/calendar/CalendarUtils done
+Event: 0.298 loading class java/text/DateFormatSymbols
+Event: 0.298 loading class java/text/DateFormatSymbols done
+Event: 0.298 loading class sun/util/locale/provider/DateFormatSymbolsProviderImpl
+Event: 0.298 loading class sun/util/locale/provider/DateFormatSymbolsProviderImpl done
+Event: 0.298 loading class sun/text/resources/en/FormatData_en
+Event: 0.298 loading class sun/text/resources/en/FormatData_en done
+Event: 0.298 loading class sun/text/resources/en/FormatData_en_US
+Event: 0.298 loading class sun/text/resources/en/FormatData_en_US done
+Event: 0.299 loading class sun/util/resources/en/CurrencyNames_en_US
+Event: 0.299 loading class sun/util/resources/en/CurrencyNames_en_US done
+Event: 0.299 loading class sun/util/resources/zh/CalendarData_zh
+Event: 0.299 loading class sun/util/resources/zh/CalendarData_zh done
+Event: 0.300 loading class sun/reflect/generics/parser/SignatureParser
+Event: 0.300 loading class sun/reflect/generics/parser/SignatureParser done
+Event: 0.301 loading class sun/reflect/generics/tree/FormalTypeParameter
+Event: 0.301 loading class sun/reflect/generics/tree/TypeTree
+Event: 0.301 loading class sun/reflect/generics/tree/Tree
+Event: 0.301 loading class sun/reflect/generics/tree/Tree done
+Event: 0.301 loading class sun/reflect/generics/tree/TypeTree done
+Event: 0.301 loading class sun/reflect/generics/tree/FormalTypeParameter done
+Event: 0.301 loading class sun/reflect/generics/tree/TypeArgument
+Event: 0.301 loading class sun/reflect/generics/tree/TypeArgument done
+Event: 0.301 loading class sun/reflect/generics/tree/SimpleClassTypeSignature
+Event: 0.301 loading class sun/reflect/generics/tree/FieldTypeSignature
+Event: 0.301 loading class sun/reflect/generics/tree/BaseType
+Event: 0.301 loading class sun/reflect/generics/tree/TypeSignature
+Event: 0.301 loading class sun/reflect/generics/tree/ReturnType
+Event: 0.301 loading class sun/reflect/generics/tree/ReturnType done
+Event: 0.301 loading class sun/reflect/generics/tree/TypeSignature done
+Event: 0.301 loading class sun/reflect/generics/tree/BaseType done
+Event: 0.301 loading class sun/reflect/generics/tree/FieldTypeSignature done
+Event: 0.301 loading class sun/reflect/generics/tree/SimpleClassTypeSignature done
+Event: 0.301 loading class sun/reflect/generics/tree/ClassTypeSignature
+Event: 0.301 loading class sun/reflect/generics/tree/ClassTypeSignature done
+Event: 0.301 loading class java/lang/ArrayIndexOutOfBoundsException
+Event: 0.301 loading class java/lang/IndexOutOfBoundsException
+Event: 0.301 loading class java/lang/IndexOutOfBoundsException done
+Event: 0.301 loading class java/lang/ArrayIndexOutOfBoundsException done
+Event: 0.301 loading class sun/reflect/generics/tree/ClassSignature
+Event: 0.301 loading class sun/reflect/generics/tree/Signature
+Event: 0.301 loading class sun/reflect/generics/tree/Signature done
+Event: 0.301 loading class sun/reflect/generics/tree/ClassSignature done
+Event: 0.301 loading class sun/reflect/UnsafeFieldAccessorFactory
+Event: 0.302 loading class sun/reflect/UnsafeFieldAccessorFactory done
+Event: 0.302 loading class sun/reflect/UnsafeObjectFieldAccessorImpl
+Event: 0.302 loading class sun/reflect/UnsafeObjectFieldAccessorImpl done
+Event: 0.303 loading class sun/reflect/MethodAccessorGenerator
+Event: 0.303 loading class sun/reflect/AccessorGenerator
+Event: 0.303 loading class sun/reflect/ClassFileConstants
+Event: 0.303 loading class sun/reflect/ClassFileConstants done
+Event: 0.303 loading class sun/reflect/AccessorGenerator done
+Event: 0.303 loading class sun/reflect/MethodAccessorGenerator done
+Event: 0.304 loading class sun/reflect/ByteVectorFactory
+Event: 0.304 loading class sun/reflect/ByteVectorFactory done
+Event: 0.304 loading class sun/reflect/ByteVectorImpl
+Event: 0.304 loading class sun/reflect/ByteVector
+Event: 0.304 loading class sun/reflect/ByteVector done
+Event: 0.304 loading class sun/reflect/ByteVectorImpl done
+Event: 0.304 loading class sun/reflect/ClassFileAssembler
+Event: 0.304 loading class sun/reflect/ClassFileAssembler done
+Event: 0.304 loading class sun/reflect/UTF8
+Event: 0.304 loading class sun/reflect/UTF8 done
+Event: 0.305 loading class sun/reflect/Label
+Event: 0.305 loading class sun/reflect/Label done
+Event: 0.305 loading class sun/reflect/Label$PatchInfo
+Event: 0.305 loading class sun/reflect/Label$PatchInfo done
+Event: 0.305 loading class sun/reflect/MethodAccessorGenerator$1
+Event: 0.305 loading class sun/reflect/MethodAccessorGenerator$1 done
+Event: 0.305 loading class sun/reflect/ClassDefiner
+Event: 0.305 loading class sun/reflect/ClassDefiner done
+Event: 0.305 loading class sun/reflect/ClassDefiner$1
+Event: 0.305 loading class sun/reflect/ClassDefiner$1 done
+Event: 0.305 loading class sun/reflect/BootstrapConstructorAccessorImpl
+Event: 0.305 loading class sun/reflect/BootstrapConstructorAccessorImpl done
+Event: 0.357 Thread 0x0000000001479000 Uncommon trap: trap_request=0xffffff65 fr.pc=0x0000000003358ea0
+Event: 0.357 Thread 0x0000000001479000 DEOPT PACKING pc=0x0000000003358ea0 sp=0x000000000306f200
+Event: 0.357 Thread 0x0000000001479000 DEOPT UNPACKING pc=0x00000000031b807b sp=0x000000000306f198 mode 2
+Event: 0.359 Thread 0x0000000001479000 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000000000334cec0
+Event: 0.359 Thread 0x0000000001479000 DEOPT PACKING pc=0x000000000334cec0 sp=0x000000000306f290
+Event: 0.359 Thread 0x0000000001479000 DEOPT UNPACKING pc=0x00000000031b807b sp=0x000000000306f220 mode 2
+Event: 0.360 loading class sun/misc/FloatingDecimal
+Event: 0.360 loading class sun/misc/FloatingDecimal done
+Event: 0.360 loading class sun/misc/FloatingDecimal$ExceptionalBinaryToASCIIBuffer
+Event: 0.360 loading class sun/misc/FloatingDecimal$BinaryToASCIIConverter
+Event: 0.360 loading class sun/misc/FloatingDecimal$BinaryToASCIIConverter done
+Event: 0.360 loading class sun/misc/FloatingDecimal$ExceptionalBinaryToASCIIBuffer done
+Event: 0.360 loading class sun/misc/FloatingDecimal$BinaryToASCIIBuffer
+Event: 0.360 loading class sun/misc/FloatingDecimal$BinaryToASCIIBuffer done
+Event: 0.361 loading class sun/misc/FloatingDecimal$1
+Event: 0.361 loading class sun/misc/FloatingDecimal$1 done
+Event: 0.361 loading class sun/misc/FloatingDecimal$PreparedASCIIToBinaryBuffer
+Event: 0.361 loading class sun/misc/FloatingDecimal$ASCIIToBinaryConverter
+Event: 0.361 loading class sun/misc/FloatingDecimal$ASCIIToBinaryConverter done
+Event: 0.361 loading class sun/misc/FloatingDecimal$PreparedASCIIToBinaryBuffer done
+Event: 0.378 Executing VM operation: ParallelGCFailedAllocation
+Event: 0.386 Executing VM operation: ParallelGCFailedAllocation done
+
+
+Dynamic libraries:
+0x00007ff72bf60000 - 0x00007ff72bfa9000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\bin\java.exe
+0x00007fff857c0000 - 0x00007fff859b0000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff850c0000 - 0x00007fff85172000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff82e40000 - 0x00007fff830e3000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fff84950000 - 0x00007fff849f3000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fff85180000 - 0x00007fff8521e000 	C:\Windows\System32\msvcrt.dll
+0x00007fff83e00000 - 0x00007fff83e97000 	C:\Windows\System32\sechost.dll
+0x00007fff84fa0000 - 0x00007fff850c0000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff838f0000 - 0x00007fff83a84000 	C:\Windows\System32\USER32.dll
+0x00007fff82880000 - 0x00007fff828a1000 	C:\Windows\System32\win32u.dll
+0x00007fff84070000 - 0x00007fff84096000 	C:\Windows\System32\GDI32.dll
+0x00007fff82a80000 - 0x00007fff82c14000 	C:\Windows\System32\gdi32full.dll
+0x00007fff82ca0000 - 0x00007fff82d3e000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff82d40000 - 0x00007fff82e3a000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff75290000 - 0x00007fff75515000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.476_none_e6c4b11b130f2595\COMCTL32.dll
+0x00007fff84c50000 - 0x00007fff84f86000 	C:\Windows\System32\combase.dll
+0x00007fff828b0000 - 0x00007fff82930000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007fff83ea0000 - 0x00007fff83ece000 	C:\Windows\System32\IMM32.DLL
+0x0000000074ce0000 - 0x0000000074db2000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\msvcr100.dll
+0x0000000074dc0000 - 0x000000007567b000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\server\jvm.dll
+0x00007fff84940000 - 0x00007fff84948000 	C:\Windows\System32\PSAPI.DLL
+0x00007fff7f030000 - 0x00007fff7f039000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff80640000 - 0x00007fff80664000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff7c790000 - 0x00007fff7c79a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fff84000000 - 0x00007fff8406f000 	C:\Windows\System32\WS2_32.dll
+0x00007fff801c0000 - 0x00007fff801ed000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x00007fff82800000 - 0x00007fff8284a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007fff7ef70000 - 0x00007fff7ef7f000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\verify.dll
+0x00007fff7e350000 - 0x00007fff7e379000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\java.dll
+0x00007fff7dd90000 - 0x00007fff7dda6000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\zip.dll
+0x00007fff84250000 - 0x00007fff84935000 	C:\Windows\System32\SHELL32.dll
+0x00007fff84ba0000 - 0x00007fff84c49000 	C:\Windows\System32\shcore.dll
+0x00007fff830f0000 - 0x00007fff8386e000 	C:\Windows\System32\windows.storage.dll
+0x00007fff826c0000 - 0x00007fff826df000 	C:\Windows\System32\profapi.dll
+0x00007fff826e0000 - 0x00007fff8272a000 	C:\Windows\System32\powrprof.dll
+0x00007fff82690000 - 0x00007fff826a0000 	C:\Windows\System32\UMPDC.dll
+0x00007fff83ed0000 - 0x00007fff83f22000 	C:\Windows\System32\shlwapi.dll
+0x00007fff826a0000 - 0x00007fff826b1000 	C:\Windows\System32\kernel.appcore.dll
+0x00007fff82c80000 - 0x00007fff82c97000 	C:\Windows\System32\cryptsp.dll
+0x00007fff7d670000 - 0x00007fff7d68a000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\net.dll
+0x00007fff81f00000 - 0x00007fff81f67000 	C:\Windows\system32\mswsock.dll
+0x00007fff7c940000 - 0x00007fff7c951000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\nio.dll
+
+VM Arguments:
+java_command: com.pcschool.ocp.d10.case7.SalesMain
+java_class_path (initial): C:\Users\MB-207\Documents\NetBeansProjects\Java0811\Java0811\target\classes;C:\Users\MB-207\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1
+PATH=C:\Program Files\AdoptOpenJDK\jre-11.0.5.10-hotspot\bin;C:\Program Files (x86)\AdoptOpenJDK\jre-8.0.232.09-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\bin;C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin;C:\Users\MB-207\AppData\Local\Microsoft\WindowsApps;
+USERNAME=MB-teacher
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.329)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, tsc, tscinvbit
+
+Memory: 4k page, physical 8345568k(1921600k free), swap 8345568k(5132k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.232-b09) for windows-amd64 JRE (1.8.0_232-b09), built on Oct 20 2019 21:49:19 by "VssAdministrator" with MS VC++ 10.0 (VS2010)
+
+time: Fri Aug 21 16:05:55 2020
+timezone: 台北標準時間
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
