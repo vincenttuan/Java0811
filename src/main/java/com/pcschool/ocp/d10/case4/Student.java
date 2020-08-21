@@ -5,15 +5,15 @@ import java.util.Set;
 
 public class Student {
     private String name;
-    private Set<Exam> scores;
+    private Set<Exam> exams;
 
     public Student(String name) {
         this(name, new LinkedHashSet());
     }
 
-    public Student(String name, Set<Exam> scores) {
+    public Student(String name, Set<Exam> exams) {
         this.name = name;
-        this.scores = scores;
+        this.exams = exams;
     }
 
     public String getName() {
@@ -24,19 +24,19 @@ public class Student {
         this.name = name;
     }
 
-    public Set<Exam> getScores() {
-        return scores;
+    public Set<Exam> getExams() {
+        return exams;
     }
 
     public Student addScore(int score) {
         Exam exam = new Exam(score);
-        scores.add(exam);
+        exams.add(exam);
         return this;
     }
 
     @Override
     public String toString() {
-        return "Student{" + "name=" + name + ", scores=" + scores + '}';
+        return "Student{" + "name=" + name + ", exams=" + exams + '}';
     }
     
     
