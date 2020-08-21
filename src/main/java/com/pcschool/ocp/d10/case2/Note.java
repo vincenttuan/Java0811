@@ -39,13 +39,27 @@ public class Note {
         this.nextNote = nextNote;
     }
 
-    public String printNextNotes() {
-        return "Note{" + "data=" + data + ", nextNote=" + nextNote + '}';
+    public String getNextNotes() {
+        String s = data + ",";
+        Note next = nextNote;
+        while (next != null) {
+            s += next.getData() + ",";
+            next = next.getNextNote();
+        }
+        return s;
     }
     
-    public String printPreviousNotes() {
-        return "Note{" + "data=" + data + ", previousNote=" + previousNote + '}';
+    public String getPreviousNotes() {
+        String s = data + ",";
+        Note previous = previousNote;
+        while (previous != null) {
+            s += previous.getData() + ",";
+            previous = previous.getPreviousNote();
+        }
+        return s;
     }
 
+    
+    
     
 }
