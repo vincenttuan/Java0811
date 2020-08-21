@@ -2,8 +2,9 @@ package com.pcschool.ocp.d10.case4;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
-public class School {
+public class School2 {
     public static void main(String[] args) {
         Student s1 = new Student("John");
         s1.addScore(80).addScore(90).addScore(90).addScore(70);
@@ -24,15 +25,13 @@ public class School {
         students.add(s2);
         System.out.println(students);
         
-        // 以每人的最高分來求平均 ?
-        double avg = students.stream()
-                    .mapToInt(s -> s.getExams().stream()                    // [80, 90, 70] Integer[]
-                                               .mapToInt(e -> e.getScore()) // [80, 90, 70] int[]
-                                               .summaryStatistics()         // 統計運算
-                                               .getMax())                   // 90
-                    .average()
-                    .getAsDouble();
-        System.out.println(avg);
+        // 全班 2 (平均大的放在前面, 小的放在後面)
+        Set<Student> students2 = new TreeSet<>();
+        students2.add(s1);
+        students2.add(s2);
+        System.out.println(students2);
+        
+        
         
         
         
