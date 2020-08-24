@@ -36,6 +36,12 @@ public class MapDemo2 {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
         System.out.println();
+        // 走訪元素 5 (Java 8)
+        exams.forEach((key, value) -> System.out.println(key + ":" + value));
+        System.out.println();
+        // 走訪元素 6 (Java 8 stream api)
+        exams.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + ":" + entry.getValue()));
+        System.out.println();
     }
 }
 
