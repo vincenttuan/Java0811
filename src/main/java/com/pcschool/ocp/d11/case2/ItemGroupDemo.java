@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 public class ItemGroupDemo {
@@ -38,5 +39,21 @@ public class ItemGroupDemo {
         Map<String, Integer> group2 = items.stream()
                 .collect(groupingBy(Item::getName, summingInt(Item::getQty)));
         System.out.println(group2);
+        // 根據價格(price)來分類水果
+        System.out.println(
+                items.stream()
+                    .collect(groupingBy(Item::getPrice))
+        );
+        Map<BigDecimal, List<Item>> group3 = items.stream().collect(groupingBy(Item::getPrice));
+        System.out.println(group3);
+        // 根據價格(price)來分類水果名字
+        System.out.println(
+                items.stream()
+                    .collect(groupingBy(Item::getPrice, mapping(Item::getName, toList())))
+        );
+        System.out.println(
+                items.stream()
+                    .collect(groupingBy(Item::getPrice, mapping(Item::getName, toSet())))
+        );
     }
 }
