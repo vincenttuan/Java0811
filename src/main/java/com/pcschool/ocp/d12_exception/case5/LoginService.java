@@ -2,7 +2,7 @@ package com.pcschool.ocp.d12_exception.case5;
 
 import java.util.Optional;
 
-public class LoginrService {
+public class LoginService {
     public boolean login(String username, String password) {
         // 判斷是否有此帳號 ?
         Optional<User> optUser = UserDB.getInstance().getUser(username);
