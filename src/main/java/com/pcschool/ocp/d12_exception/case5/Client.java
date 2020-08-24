@@ -6,7 +6,7 @@ public class Client {
     }
     
     public static void accessLogin() {
-        LoginService service = new LoginService();
+        LoginService service = LoginService.getInstance();
         String username = "john";
         String password = "1234";
         boolean check;

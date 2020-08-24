@@ -3,6 +3,14 @@ package com.pcschool.ocp.d12_exception.case5;
 import java.util.Optional;
 
 public class LoginService {
+    private static final LoginService INSTANCE = new LoginService();
+    private LoginService() {
+    
+    }
+    public static LoginService getInstance() {
+        return INSTANCE;
+    }
+    
     public boolean login(String username, String password) throws LoginException {
         // 判斷是否有此帳號 ?
         Optional<User> optUser = UserDB.getInstance().getUser(username);
