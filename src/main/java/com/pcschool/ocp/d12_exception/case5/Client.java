@@ -8,8 +8,15 @@ public class Client {
     public static void accessLogin() {
         LoginService service = new LoginService();
         String username = "john";
-        String password = "12345";
-        boolean check = service.login(username, password);
-        System.out.println(check);
+        String password = "1234";
+        boolean check;
+        try {
+            check = service.login(username, password);
+            System.out.println(check);
+        } catch (LoginException ex) {
+            System.out.println(ex.getMessage());
+            ex.how2do();
+        }
+        
     }
 }
