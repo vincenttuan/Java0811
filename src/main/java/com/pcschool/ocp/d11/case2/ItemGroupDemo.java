@@ -55,5 +55,9 @@ public class ItemGroupDemo {
                 items.stream()
                     .collect(groupingBy(Item::getPrice, mapping(Item::getName, toSet())))
         );
+        Map<BigDecimal, List<String>> group4 = items.stream().collect(groupingBy(Item::getPrice, mapping(Item::getName, toList())));
+        Map<BigDecimal, Set<String>> group5 = items.stream().collect(groupingBy(Item::getPrice, mapping(Item::getName, toSet())));
+        System.out.println(group4);
+        System.out.println(group5);
     }
 }
