@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d11;
+package com.pcschool.ocp.d11_map;
 
 import java.util.Arrays;
 import java.util.List;

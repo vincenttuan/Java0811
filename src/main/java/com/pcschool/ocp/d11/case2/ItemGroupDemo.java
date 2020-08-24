@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d11.case2;
+package com.pcschool.ocp.d11_map.case2;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

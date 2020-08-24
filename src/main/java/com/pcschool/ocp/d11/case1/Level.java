@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d11.case1;
+package com.pcschool.ocp.d11_map.case1;
 
 public class Level implements Comparable<Level>{    
     private int score;

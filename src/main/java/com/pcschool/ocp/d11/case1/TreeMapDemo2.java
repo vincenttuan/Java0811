@@ -1,4 +1,4 @@
-package com.pcschool.ocp.d11.case1;
+package com.pcschool.ocp.d11_map.case1;
 
 import java.util.Map;
 import java.util.TreeMap;
