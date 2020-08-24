@@ -10,6 +10,7 @@ import java.util.function.Function;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.summingInt;
 import static java.util.stream.Collectors.toSet;
 
 public class ItemGroupDemo {
@@ -29,5 +30,13 @@ public class ItemGroupDemo {
         Map<String, Long> group1 = items.stream()
                 .collect(groupingBy(Item::getName, counting()));
         System.out.println(group1);
+        // 每一種水果各有幾個 (將同類的每一箱水果數量(qty)進行加總(summingInt)) ?
+        System.out.println(
+                items.stream()
+                .collect(groupingBy(Item::getName, summingInt(Item::getQty)))
+        );
+        Map<String, Integer> group2 = items.stream()
+                .collect(groupingBy(Item::getName, summingInt(Item::getQty)));
+        System.out.println(group2);
     }
 }
