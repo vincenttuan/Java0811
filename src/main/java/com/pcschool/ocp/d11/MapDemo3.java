@@ -2,6 +2,7 @@ package com.pcschool.ocp.d11;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,11 @@ public class MapDemo3 {
                 items.stream()
                      .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
         );
+        // {papaya=1, orange=1, banana=2, apple=4}
+        Map<String, Long> group1 = items.stream()
+                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        
+        System.out.println(group1);
         
     }
 }
