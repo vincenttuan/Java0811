@@ -3,8 +3,6 @@ package com.pcschool.ocp.d12_exception.case2;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ReadFileDemo {
     public static void main(String[] args) {
