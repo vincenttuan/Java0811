@@ -21,4 +21,13 @@ public class TestSquare {
         Assert.assertEquals(exp, act);
     }
     
+    @Test
+    public void test2() { // 測試三角形面積
+        int x = 10;
+        int h = 2;
+        int exp = 10;
+        Square sq = new Square();
+        int act = sq.getTriangle(x, h);
+        Assert.assertEquals(exp, act);
+    }
 }
