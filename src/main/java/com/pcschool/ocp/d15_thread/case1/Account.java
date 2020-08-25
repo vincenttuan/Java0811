@@ -13,6 +13,8 @@ public class Account {
         System.out.printf("%s 進行提款\n", tName);
         // 檢查目前的帳戶餘額
         int current_balance = balance;
+        // 模擬系統運行時間
+        for(int i=0;i<Integer.MAX_VALUE;i++);
         // 進行假提領
         current_balance = current_balance - money;
         // 進行提款程序
