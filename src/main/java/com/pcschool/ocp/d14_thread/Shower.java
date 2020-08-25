@@ -1,7 +1,5 @@
 package com.pcschool.ocp.d14_thread;
 
-import java.nio.channels.InterruptedByTimeoutException;
-
 class Father extends Thread {
     @Override
     public void run() {
