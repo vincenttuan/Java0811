@@ -9,6 +9,10 @@ class Father extends Thread {
         System.out.println("爸爸打電話請瓦斯工人送瓦斯");
         Worker worker = new Worker();
         worker.start();
+        try {
+            worker.join(5_000);
+        } catch (Exception e) {
+        }
         System.out.println("爸爸開始洗澡");
         System.out.println("爸爸洗完澡了");
     }
@@ -20,7 +24,7 @@ class Worker extends Thread {
         System.out.println("工人開始送瓦斯");
         // 模擬送瓦斯的時間
         try {
-            Thread.sleep(3000);
+            Thread.sleep(3_000);
         } catch (InterruptedException e) {
             System.out.println("瓦斯工人發生意外");
         }
