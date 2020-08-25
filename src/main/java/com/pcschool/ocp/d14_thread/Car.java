@@ -19,7 +19,10 @@ public class Car extends Thread {
             Thread.sleep(new Random().nextInt(5000));
             System.out.printf("%s 到台中了\n", tName);
             cb.await(); // 等待其他執行緒
-            System.out.printf("%s 往高雄出發\n", tName);
+            Thread.sleep(new Random().nextInt(5000));
+            System.out.printf("%s 到嘉義了\n", tName);
+            Thread.sleep(new Random().nextInt(5000));
+            System.out.printf("%s 到高雄了\n", tName);
         } catch (Exception e) {
         }
     }
