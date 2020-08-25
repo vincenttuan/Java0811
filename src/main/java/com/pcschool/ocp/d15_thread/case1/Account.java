@@ -8,7 +8,7 @@ public class Account {
     }
     
     // 提款方法
-    public void withdraw(int money) { // money 是一個方法區域變數(每一個執行緒自己會擁有一個)
+    public synchronized void withdraw(int money) { // money 是一個方法區域變數(每一個執行緒自己會擁有一個)
         String tName = Thread.currentThread().getName();
         System.out.printf("%s 進行提款\n", tName);
         // 檢查目前的帳戶餘額
