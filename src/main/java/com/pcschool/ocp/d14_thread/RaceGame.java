@@ -11,5 +11,9 @@ public class RaceGame {
         System.out.printf("參與人員: %d\n", count);
         r1.start();
         r2.start();
+        // 參與人員(有幾條執行緒在運行)
+        int count2 = Thread.activeCount();
+        System.out.printf("參與人員: %d\n", count2);
+        
     }
 }
