@@ -64,4 +64,31 @@ public class BookCRUD {
         }
         return false;
     }
+    
+    // 修改單筆
+    public boolean updateBook(Book book) {
+        String sql = "UPDATE book SET bname=?, price=? WHERE id=?";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, book.getBname());
+            pstmt.setInt(2, book.getPrice());
+            pstmt.setInt(3, book.getId());
+            int rowcount = pstmt.executeUpdate();
+            return rowcount > 0 ? true : false;
+        } catch (Exception e) {
+        }
+        return false;
+    }
+    
+    // 刪除單筆
+    public boolean deleteBook(int id) {
+        String sql = "DELETE FROM book WHERE id=?";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, id);
+            int rowcount = pstmt.executeUpdate();
+            return rowcount > 0 ? true : false;
+        } catch (Exception e) {
+        }
+        return false;
+    }
+    
 }
