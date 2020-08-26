@@ -13,7 +13,6 @@ import java.util.List;
 public class BookCRUD {
     private BookDao dao = BookDao.getInstance();
     private Connection conn = dao.getConn();
-    private Object pstmt;
     
     // 查詢所有 book 資料
     public List<Book> queryAll() {
