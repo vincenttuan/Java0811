@@ -1,13 +1,17 @@
 package com.pcschool.ocp.d16_derby.case4_book;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class BookClient {
+
     private BookCRUD crud = new BookCRUD();
+
     public static void main(String[] args) {
         new BookClient().menu();
     }
-    
+
     public void menu() {
         System.out.println("1.新增紀錄");
         System.out.println("2.修改紀錄");
@@ -27,9 +31,9 @@ public class BookClient {
         new Scanner(System.in).nextLine();
         menu();
     }
-    
+
     public void service(int choice) {
-        switch(choice) {
+        switch (choice) {
             case 1:
                 add();
                 break;
@@ -44,10 +48,10 @@ public class BookClient {
                 break;
             case 5:
                 query();
-                break;    
+                break;
         }
     }
-    
+
     // 新增紀錄
     public void add() {
         // 取得使用者輸入
@@ -65,7 +69,7 @@ public class BookClient {
         // 確認成功/失敗 ?
         System.out.println(check ? "新增成功" : "新增失敗");
     }
-    
+
     // 修改紀錄
     public void update() {
         // 取得使用者輸入
@@ -73,43 +77,58 @@ public class BookClient {
         System.out.print("請輸入要修改的 id:");
         int id = sc.nextInt();
         Book book = crud.getBook(id);
-        if(book == null) {
+        if (book == null) {
             System.out.println("無此記錄");
             return;
         }
         System.out.print("是否要修改書名(y/n)?");
-        if(sc.next().equals("y")) {
-            System.out.print("請輸入書名(bname):"); 
+        if (sc.next().equals("y")) {
+            System.out.print("請輸入書名(bname):");
             book.setBname(sc.next()); // 將使用者所輸入的資料注入到 book 的 bname 欄位中
         }
         System.out.print("是否要修改價格(y/n)?");
-        if(sc.next().equals("y")) {
-            System.out.print("請輸入價格(price):"); 
+        if (sc.next().equals("y")) {
+            System.out.print("請輸入價格(price):");
             book.setPrice(sc.nextInt()); // 將使用者所輸入的資料注入到 book 的 price 欄位中
         }
         boolean check = crud.updateBook(book);
         // 確認成功/失敗 ?
         System.out.println(check ? "修改成功" : "修改失敗");
     }
-    
-    // 刪除錄
+
+    // 刪除紀錄
     public void delete() {
         // 取得使用者輸入
+        System.out.print("請輸入要刪除的 id: ");
         Scanner sc = new Scanner(System.in);
+        int id = sc.nextInt();
+        boolean check = crud.deleteBook(id);
+        // 確認成功/失敗 ?
+        System.out.println(check ? "刪除成功" : "刪除失敗");
     }
-    
+
     // 查詢單筆
     public void get() {
         System.out.print("請輸入 id: ");
         Scanner sc = new Scanner(System.in);
         int id = sc.nextInt();
         Book book = crud.getBook(id);
-        System.out.println(book);
+        display(Arrays.asList(book));
     }
-    
+
     // 查詢多筆
     public void query() {
-        crud.queryAll().forEach(System.out::println);
+        display(crud.queryAll());
     }
-    
+
+    public void display(List<Book> books) {
+        String leftAlignFormat = "| %-4d | %-15s | %-5d | %-25s |%n";
+        System.out.format("+------+-----------------+-------+---------------------------+%n");
+        System.out.format("| ID   | Book name       | Price | Timestamp                 |%n");
+        System.out.format("+------+-----------------+-------+---------------------------+%n");
+        for (Book book : books) {
+            System.out.format(leftAlignFormat, book.getId(), book.getBname(), book.getPrice(), book.getTs());
+        }
+        System.out.format("+------+-----------------+-------+---------------------------+%n");
+    }
 }
