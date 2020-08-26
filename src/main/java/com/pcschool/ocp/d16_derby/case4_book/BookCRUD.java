@@ -83,7 +83,7 @@ public class BookCRUD {
     public boolean deleteBook(int id) {
         String sql = "DELETE FROM book WHERE id=?";
         try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, id);
+            pstmt.setInt(1, id);
             int rowcount = pstmt.executeUpdate();
             return rowcount > 0 ? true : false;
         } catch (Exception e) {
