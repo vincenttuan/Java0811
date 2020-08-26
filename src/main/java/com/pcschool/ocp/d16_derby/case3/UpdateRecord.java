@@ -28,8 +28,9 @@ public class UpdateRecord {
 
             if (rs.last()) { // 是否有資料 ? 將游標指向該筆紀錄
                 rs.updateInt("price", 600);
-                //rs.cancelRowUpdates();
-                rs.updateRow();
+                //rs.cancelRowUpdates(); // 取消更新
+                rs.updateRow(); // 一定要加入才可以修改實體資料表
+                //rs.deleteRow(); // 一定要加入才可以刪除實體資料表
                 System.out.println("Update OK");
             } else {
                 System.out.println("Update Error (查無資料)");
