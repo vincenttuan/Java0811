@@ -3,12 +3,12 @@ package com.pcschool.ocp.d16_derby.case4_book;
 import java.util.Scanner;
 
 public class BookClient {
-    private static BookCRUD crud = new BookCRUD();
+    private BookCRUD crud = new BookCRUD();
     public static void main(String[] args) {
-        menu();
+        new BookClient().menu();
     }
     
-    public static void menu() {
+    public void menu() {
         System.out.println("1.新增紀錄");
         System.out.println("2.修改紀錄");
         System.out.println("3.刪除紀錄");
@@ -28,7 +28,7 @@ public class BookClient {
         menu();
     }
     
-    public static void service(int choice) {
+    public void service(int choice) {
         switch(choice) {
             case 1:
                 add();
@@ -49,28 +49,28 @@ public class BookClient {
     }
     
     // 新增紀錄
-    public static void add() {
+    public void add() {
         
     }
     
     // 修改紀錄
-    public static void update() {
+    public void update() {
         
     }
     
     // 刪除錄
-    public static void delete() {
+    public void delete() {
         
     }
     
     // 查詢單筆
-    public static void get() {
+    public void get() {
         
     }
     
     // 查詢多筆
-    public static void query() {
-        
+    public void query() {
+        crud.queryAll().forEach(System.out::println);
     }
     
 }
