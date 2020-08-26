@@ -3,6 +3,10 @@ package com.pcschool.ocp.d16_derby.case4_book;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/*
+    資料庫連線建立
+*/
+
 public class BookDao {
     private static final BookDao dao = new BookDao();
     private Connection conn;
@@ -20,6 +24,10 @@ public class BookDao {
         return dao;
     }
 
+    public Connection getConn() {
+        return conn;
+    }
+    
     @Override
     protected void finalize() throws Throwable {
         if(conn != null) {
