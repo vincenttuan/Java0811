@@ -23,6 +23,8 @@ public class BookClient {
             return;
         }
         service(choice);
+        System.out.println("按下 enter 鍵繼續 ...");
+        new Scanner(System.in).nextLine();
         menu();
     }
     
