@@ -50,7 +50,20 @@ public class BookClient {
     
     // 新增紀錄
     public void add() {
-        
+        // 取得使用者輸入
+        Scanner sc = new Scanner(System.in);
+        System.out.print("請輸入書名(bname): ");
+        String bname = sc.next();
+        System.out.print("請輸入價格(price): ");
+        int price = sc.nextInt();
+        // 建立 book 物件, 並將使用者所輸入的資料注入
+        Book book = new Book();
+        book.setBname(bname);
+        book.setPrice(price);
+        // 進行資料庫新增
+        boolean check = crud.addBook(book);
+        // 確認成功/失敗 ?
+        System.out.println(check ? "新增成功" : "新增失敗");
     }
     
     // 修改紀錄
@@ -65,7 +78,11 @@ public class BookClient {
     
     // 查詢單筆
     public void get() {
-        
+        System.out.print("請輸入 id: ");
+        Scanner sc = new Scanner(System.in);
+        int id = sc.nextInt();
+        Book book = crud.getBook(id);
+        System.out.println(book);
     }
     
     // 查詢多筆
