@@ -5,5 +5,6 @@ public class BookClient {
         System.gc();
         BookCRUD crud = new BookCRUD();
         crud.queryAll().forEach(System.out::println);
+        System.out.println(crud.getBook(1));
     }
 }
