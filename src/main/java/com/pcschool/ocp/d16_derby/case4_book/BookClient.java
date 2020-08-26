@@ -68,12 +68,34 @@ public class BookClient {
     
     // 修改紀錄
     public void update() {
-        
+        // 取得使用者輸入
+        Scanner sc = new Scanner(System.in);
+        System.out.print("請輸入要修改的 id:");
+        int id = sc.nextInt();
+        Book book = crud.getBook(id);
+        if(book == null) {
+            System.out.println("無此記錄");
+            return;
+        }
+        System.out.print("是否要修改書名(y/n)?");
+        if(sc.next().equals("y")) {
+            System.out.print("請輸入書名(bname):"); 
+            book.setBname(sc.next()); // 將使用者所輸入的資料注入到 book 的 bname 欄位中
+        }
+        System.out.print("是否要修改價格(y/n)?");
+        if(sc.next().equals("y")) {
+            System.out.print("請輸入價格(price):"); 
+            book.setPrice(sc.nextInt()); // 將使用者所輸入的資料注入到 book 的 price 欄位中
+        }
+        boolean check = crud.updateBook(book);
+        // 確認成功/失敗 ?
+        System.out.println(check ? "修改成功" : "修改失敗");
     }
     
     // 刪除錄
     public void delete() {
-        
+        // 取得使用者輸入
+        Scanner sc = new Scanner(System.in);
     }
     
     // 查詢單筆
