@@ -51,4 +51,17 @@ public class BookCRUD {
         return book;
         
     }
+    
+    // 新增單筆
+    public boolean addBook(Book book) {
+        String sql = "INSERT INTO book(bname, price) VALUES(?, ?)";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, book.getBname());
+            pstmt.setInt(2, book.getPrice());
+            int rowcount = pstmt.executeUpdate();
+            return rowcount > 0 ? true : false;
+        } catch (Exception e) {
+        }
+        return false;
+    }
 }
