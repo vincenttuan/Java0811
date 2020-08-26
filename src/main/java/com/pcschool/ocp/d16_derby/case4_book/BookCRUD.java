@@ -33,6 +33,7 @@ public class BookCRUD {
         return books;
     }
     
+    // 查詢單筆
     public Book getBook(int id) {
         Book book = null;
         String sql = "SELECT id, bname, price, ts FROM book WHERE id = ?";
