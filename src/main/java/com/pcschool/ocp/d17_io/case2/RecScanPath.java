@@ -3,11 +3,12 @@ package com.pcschool.ocp.d17_io.case2;
 import java.io.File;
 
 public class RecScanPath {
-
+    static int java_file_count = 0;
     public static void main(String[] args) {
-        String s = "C:\\";
+        String s = "src\\main\\java\\com\\pcschool\\ocp";
         File path = new File(s);
         scan(path);
+        System.out.printf("java_file_count: %d 支\n", java_file_count);
     }
 
     public static void scan(File path) {
@@ -17,6 +18,10 @@ public class RecScanPath {
                 System.out.printf("%s 是%s\n", f.getPath(), f.isFile() ? "檔案" : "目錄");
                 if (f.isDirectory()) {
                     scan(f);
+                } else {
+                    if(f.getName().contains(".java")) {
+                        ++java_file_count;
+                    }
                 }
             }
         } catch (Exception e) {
