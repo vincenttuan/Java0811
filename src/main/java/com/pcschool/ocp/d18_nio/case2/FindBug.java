@@ -11,7 +11,7 @@ public class FindBug {
         Optional<String> data = Files.readAllLines(path)
                 .stream()
                 .filter(s -> s.contains("bug"))
-                .parallel()
+                .parallel() // 多工
                 .findFirst();
                 
         if(data.isPresent()) {
