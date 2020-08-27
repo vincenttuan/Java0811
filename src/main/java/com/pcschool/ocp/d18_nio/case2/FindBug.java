@@ -10,6 +10,7 @@ public class FindBug {
         Path path = Paths.get("src\\main\\java\\com\\pcschool\\ocp\\d18_nio\\report.txt");
         Optional<String> data = Files.readAllLines(path)
                 .stream()
+                .peek(System.out::println)
                 .filter(s -> s.contains("bug"))
                 .parallel() // 多工
                 .findFirst();
