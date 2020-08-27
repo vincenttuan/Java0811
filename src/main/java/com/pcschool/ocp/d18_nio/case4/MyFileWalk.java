@@ -12,7 +12,18 @@ public class MyFileWalk {
         Stream<Path> files = Files.walk(path);
         files.parallel()
                 .filter(p -> p.toFile().isFile())
-                .forEach(p -> System.out.println(p.getFileName()));
+                .filter(p -> {
+                    try {
+                        return Files.readAllLines(p)
+                                .stream()
+                                .filter(s -> s.contains("apple"))
+                                .findFirst()
+                                .isPresent();
+                    } catch (Exception e) {
+                    }
+                    return false;
+                })
+                .forEach(p -> System.out.println(p.getParent() + " : " + p.getFileName()));
         
     }
 }
