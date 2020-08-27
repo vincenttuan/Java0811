@@ -21,6 +21,9 @@ public class RecScanPath {
                 } else {
                     if(f.getName().contains(".java")) {
                         ++java_file_count;
+//                        if(java_file_count == 150) {
+//                            System.out.println("第150支是:" + f);
+//                        }
                     }
                 }
             }
